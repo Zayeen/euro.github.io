@@ -1,116 +1,65 @@
-# ☣️ 
+# 🛡️ EURO IoT INTELLIGENCE
+
+```text
+  _______  __   __  _______  _______    ___   _______  _______ 
+ |       ||  | |  ||       ||       |  |   | |       ||       |
+ |    ___||  | |  ||    ___||   _   |  |   | |   _   ||_     _|
+ |   |___ |  |_|  ||   |___ |  | |  |  |   | |  | |  |  |   |  
+ |    ___||       ||    ___||  |_|  |  |   | |  |_|  |  |   |  
+ |   |___ |       ||   |    |       |  |   | |       |  |   |  
+ |_______||_______||___|    |_______|  |___| |_______|  |___|  
+
+            [ SYSTEM SECURITY STATUS: ACTIVE ]
+```
 
 <div align="center">
 
-<!-- ANIMATED GLITCH HEADER -->
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ff9c,100:7f00ff&height=220&section=header&text=%20CYBER%20SYSTEM&fontSize=42&fontColor=00e1ff&animation=fadeIn" />
-
+```text
+ _________________________________________________________________
+|                                                                 |
+|   EURO IoT INTELLIGENCE                         v.2.6.0 [STABLE]|
+|_________________________________________________________________|
+|                                                                 |
+|   > INITIALIZING SECURITY PROTOCOLS...               [ OK ]     |
+|   > CONNECTING TO NEURAL NETWORK...                  [ OK ]     |
+|   > ENCRYPTING DATA STREAMS...                       [ OK ]     |
+|                                                                 |
+|   -----------------------------------------------------------   |
+|   |  STATUS: ONLINE   |  PING: 14ms   |  ENCRYPTION: 256b   |   |
+|   -----------------------------------------------------------   |
+|_________________________________________________________________|
 ```
-░▒▓█ MATRIX FEED █▓▒░
-░▒▓█ SIGNAL UNSTABLE █▓▒░
-░▒▓█ ACCESS GRANTED █▓▒░
-```
 
-<!-- ANIMATED BADGES -->
-
-<img src="https://img.shields.io/badge/STATUS-ONLINE-00ff9c?style=for-the-badge&logo=matrix&logoColor=black&labelColor=000000" />
-<img src="https://img.shields.io/badge/GLITCH-ACTIVE-7f00ff?style=for-the-badge&logo=databricks&logoColor=black&labelColor=000000" />
-<img src="https://img.shields.io/badge/TRACE-UNDETECTED-00e1ff?style=for-the-badge&logo=protonvpn&logoColor=black&labelColor=000000" />
-<img src="https://img.shields.io/badge/BUILD-STABLE-ff0055?style=for-the-badge&logo=githubactions&logoColor=black&labelColor=000000" />
-
-<!-- PULSE BADGES -->
-
-<img src="https://img.shields.io/badge/ACCESS-GRANTED-000000?style=flat-square&labelColor=00ff9c" />
-<img src="https://img.shields.io/badge/MODE-CYBERPUNK-000000?style=flat-square&labelColor=7f00ff" />
-<img src="https://img.shields.io/badge/NEURAL--LINK-SYNCED-000000?style=flat-square&labelColor=00e1ff" />
+**SECURE SMART HOME INSIGHTS & ANALYSIS**
 
 </div>
 
 ---
 
-## 🧠 SYSTEM BOOT // GLITCH LOG
+## 📡 MISSION PROTOCOL
 
-```
-> init.sys ██████████ 100%
-> loading matrix feed...
-> ██▒▒▓▓▒▒▓▓▒▒▓▓▒▒▓▓
-> signal distortion detected
-> overriding...
-> access granted
-```
+We are a **High-End Security Intelligence Blog** dedicated to exposing vulnerabilities in the Internet of Things (IoT) ecosystem and advocating for stronger encryption standards.
 
-**EURO Project** now runs in **Matrix / Glitch mode**.
-Designed to look unstable — while staying rock solid underneath.
+> *"The S in IoT stands for Security."*
 
----
+## ⚡ CORE MODULES
 
-## 🌐 EXTERNAL NODE
+*   **🛡️ AI Surveillance:** Neural network analysis of modern camera systems.
+*   **🔐 Matter Protocol:** Unifying the fragmented smart home landscape.
+*   **🧬 Biometric Auth:** Moving beyond passwords to physical identity.
+*   **⛔ Vulnerability Reports:** Weekly exposes on insecure legacy devices.
 
+## 🛠️ TECH STACK
 
-`[ outbound connection established ]`
+This platform is built for speed and security:
 
----
+*   **HTML5:** Semantic architecture.
+*   **CSS3:** Glassmorphism UI with Neon accents (`style.css`).
+*   **Zero-JS:** No client-side scripts to track you.
 
-## ☢️ DIRECTIVES
+## 🚀 ACCESS PORTAL
 
-* ⚡ ZERO LATENCY
-* 🧬 MODULAR BY DESIGN
-* 🔒 PARANOID SECURITY MODEL
-* 🧪 CONTROLLED CHAOS
-
-> *There is no UI — only interfaces.*
+Simply open `index.html` to access the intelligence feed.
 
 ---
-
-## 🖥️ LIVE TERMINAL
-
-```
-$ matrix --status
-STREAM: ACTIVE
-GLITCH: ENABLED
-OBSERVER: UNKNOWN
-```
-
----
-
-## 🎛️ CORE VISUAL BLOCK
-
-```
-╔═══════════════════════════╗
-║  EURO MATRIX CORE         ║
-║  ▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░      ║
-║  SIGNAL: ████████▒▒▒     ║
-║  STATE: STABLE / CHAOS   ║
-╚═══════════════════════════╝
-```
-
----
-
-## 🧭 ROADMAP // OBFUSCATED
-
-* [ ] Animated glitch header (SVG)
-* [ ] Hidden commands
-* [ ] Fake intrusion logs
-* [ ] Zero tracking, ever
-
----
-
-## 📜 LICENSE
-
-```
-MIT LICENSE
-YOU ARE FREE.
-```
-
----
-
-<div align="center">
-
-```
-01001011 01000101 01000101 01010000 00100000 01000010 01010101 01001001 01001100 01000100 01001001 01001110 01000111
-```
-
-**KEEP BUILDING.**
-
-</div>
+*© 2026 EURO IoT Intelligence // ENCRYPTED CONNECTION ESTABLISHED*
