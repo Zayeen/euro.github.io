@@ -10,12 +10,100 @@
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
     --glass: blur(12px);
+    
+    /* Gradient Opacities */
+    --grad-opacity: 0.15;
+}
+
+:root:has(#theme-toggle:checked) {
+    --bg-dark: #f8fafc;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --bg-card: rgba(255, 255, 255, 0.8);
+    --border: rgba(15, 23, 42, 0.1);
+    --grad-opacity: 0.05;
+}
+
+:root:has(#theme-toggle:checked) .logo {
+    color: #0f172a;
+    text-shadow: none;
+    border-color: rgba(15, 23, 42, 0.1);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+:root:has(#theme-toggle:checked) .nav-links a {
+    color: #475569;
+}
+
+:root:has(#theme-toggle:checked) .nav-links a:hover {
+    color: var(--primary);
+    text-shadow: none;
+}
+
+:root:has(#theme-toggle:checked) header {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+:root:has(#theme-toggle:checked) .card {
+    background: #fff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+:root:has(#theme-toggle:checked) .hero h1 {
+    background: linear-gradient(to right bottom, #0f172a, #334155);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    display: none;
+}
+
+.theme-btn {
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-left: 2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-btn::after {
+    content: '☀️';
+}
+
+:root:has(#theme-toggle:checked) .theme-btn::after {
+    content: '🌙';
+    color: #0f172a;
+}
+
+.theme-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+:root:has(#theme-toggle:checked) .theme-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(59, 130, 246, var(--grad-opacity)) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(6, 182, 212, var(--grad-opacity)) 0%, transparent 20%);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
 }
 
 html {
@@ -55,14 +143,25 @@ nav {
 }
 
 .logo {
+    font-family: 'Courier New', Courier, monospace;
     font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    background: linear-gradient(to right, #fff, #94a3b8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
     text-decoration: none;
     display: inline-block;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.logo:hover {
+    text-shadow: 0 0 30px rgba(6, 182, 212, 0.8);
+    transform: scale(1.02);
 }
 
 .nav-links a {
@@ -134,6 +233,46 @@ nav {
 .glow-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+}
+
+/* Homepage Logo Placeholder */
+.hero-logo-placeholder {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 2rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 50px rgba(59, 130, 246, 0.5);
+    animation: pulse-glow 3s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-logo-placeholder::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background: var(--bg-dark);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.hero-logo-icon {
+    font-size: 2.5rem;
+    z-index: 2;
+    background: linear-gradient(to bottom, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.3); transform: scale(1); }
+    50% { box-shadow: 0 0 60px rgba(6, 182, 212, 0.6); transform: scale(1.05); }
+    100% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.3); transform: scale(1); }
 }
 
 /* Security Focus Section */
@@ -304,7 +443,7 @@ footer {
 .article-content {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #e2e8f0;
+    color: var(--text-main);
 }
 
 .article-content h2 {
