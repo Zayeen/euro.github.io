@@ -18,6 +18,10 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 body {
     background-color: var(--bg-dark);
     background-image: 
@@ -57,6 +61,8 @@ nav {
     background: linear-gradient(to right, #fff, #94a3b8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .nav-links a {
@@ -250,4 +256,128 @@ footer {
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.5rem; }
     .grid { grid-template-columns: 1fr; }
+}
+
+/* Article Page Styles */
+.article-hero {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 2rem 2rem;
+}
+
+.article-container {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
+}
+
+.article-header {
+    /* Legacy class support or removal */
+    display: none; 
+}
+
+.article-category {
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.article-header h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.article-meta {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.article-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e2e8f0;
+}
+
+.article-content h2 {
+    color: var(--text-main);
+    margin: 3rem 0 1rem;
+    font-size: 1.8rem;
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+}
+
+.article-content ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.article-content li {
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+}
+
+/* Device Index Table */
+.table-container {
+    max-width: 1000px;
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
+    overflow-x: auto;
+}
+
+.device-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.device-table th, .device-table td {
+    padding: 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.device-table th {
+    background: rgba(255, 255, 255, 0.05);
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.device-table tr:last-child td {
+    border-bottom: none;
+}
+
+.device-table tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.status-secure {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.status-warning {
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+.status-critical {
+    color: #ef4444;
+    font-weight: 600;
 }
