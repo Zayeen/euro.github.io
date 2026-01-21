@@ -1,33 +1,37 @@
-# 🛡️ EURO IoT INTELLIGENCE
+<div align="center">
 
-```text
-  _______  __   __  _______  _______    ___   _______  _______ 
- |       ||  | |  ||       ||       |  |   | |       ||       |
- |    ___||  | |  ||    ___||   _   |  |   | |   _   ||_     _|
- |   |___ |  |_|  ||   |___ |  | |  |  |   | |  | |  |  |   |  
- |    ___||       ||    ___||  |_|  |  |   | |  |_|  |  |   |  
- |   |___ |       ||   |    |       |  |   | |       |  |   |  
- |_______||_______||___|    |_______|  |___| |_______|  |___|  
-
-            [ SYSTEM SECURITY STATUS: ACTIVE ]
-```
+## 🛡️ EURO IoT 
 
 <div align="center">
 
 ```text
- _________________________________________________________________
-|                                                                 |
-|   EURO IoT INTELLIGENCE                         v.2.6.0 [STABLE]|
-|_________________________________________________________________|
-|                                                                 |
-|   > INITIALIZING SECURITY PROTOCOLS...               [ OK ]     |
-|   > CONNECTING TO NEURAL NETWORK...                  [ OK ]     |
-|   > ENCRYPTING DATA STREAMS...                       [ OK ]     |
-|                                                                 |
-|   -----------------------------------------------------------   |
-|   |  STATUS: ONLINE   |  PING: 14ms   |  ENCRYPTION: 256b   |   |
-|   -----------------------------------------------------------   |
-|_________________________________________________________________|
+  _______  __   __  _____    _______    ___   _______  _______ 
+ |       ||  | |  ||      \ |       |  |   | |       ||       |
+ |    ___||  | |  ||   _   ||   _   |  |   | |   _   ||_     _|
+ |   |___ |  |_|  ||  |_|  ||  | |  |  |   | |  | |  |  |   |  
+ |    ___||       ||    _  /|  |_|  |  |   | |  |_|  |  |   |  
+ |   |___ |       ||   | | ||       |  |   | |       |  |   |  
+ |_______||_______||___| |_||_______|  |___| |_______|  |___|  
+
+```
+<div align="center">
+            [ SYSTEM SECURITY STATUS: ACTIVE ]
+<div align="center">
+
+```text
+     _________________________________________________________________
+    |                                                                 |
+    |   EURO IoT INTELLIGENCE                         v.2.6.0 [STABLE]|
+    |_________________________________________________________________|
+    |                                                                 |
+    |   > INITIALIZING SECURITY PROTOCOLS...               [ OK ]     |
+    |   > CONNECTING TO NEURAL NETWORK...                  [ OK ]     |
+    |   > ENCRYPTING DATA STREAMS...                       [ OK ]     |
+    |                                                                 |
+    |   -----------------------------------------------------------   |
+    |   |  STATUS: ONLINE   |  PING: 14ms   |  ENCRYPTION: 256b   |   |
+    |   -----------------------------------------------------------   |
+    |_________________________________________________________________|
 ```
 
 **SECURE SMART HOME INSIGHTS & ANALYSIS**
@@ -62,4 +66,4 @@ This platform is built for speed and security:
 Simply open `index.html` to access the intelligence feed.
 
 ---
-*© 2026 EURO IoT Intelligence // ENCRYPTED CONNECTION ESTABLISHED*
+*© 2026 EURO IoT Intelligence ENCRYPTED CONNECTION ESTABLISHED*
