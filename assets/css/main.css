@@ -757,3 +757,114 @@ a:hover {
 .text-center { text-align: center; }
 .mt-lg { margin-top: var(--spacing-lg); }
 .mb-lg { margin-bottom: var(--spacing-lg); }
+
+/* ===================================
+   Pagination
+   =================================== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* ===================================
+   Tags Page
+   =================================== */
+.tags-page {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+}
+.tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 4rem;
+}
+.tag-cloud-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+.tag-cloud-item:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+.tag-cloud-item span {
+    color: var(--text-muted);
+    font-size: 0.8em;
+    margin-left: 0.3rem;
+}
+.tag-section {
+    margin-bottom: 3rem;
+}
+.tag-section h2 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+}
+.tag-posts-list {
+    list-style: none;
+    margin: 0;
+}
+.tag-posts-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+.tag-posts-list li:hover {
+    background: var(--bg-hover);
+}
+.tag-posts-list .date {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+
+/* Share Buttons */
+.post-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+}
+.share-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: var(--text-secondary);
+    flex-wrap: wrap;
+}
+.share-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    color: var(--text-primary);
+}
+.share-btn:hover {
+    background: var(--bg-hover);
+    color: var(--primary);
+    border-color: var(--primary);
+}

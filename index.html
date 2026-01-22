@@ -58,7 +58,7 @@ title: Home
     </div>
     
     <div class="posts-grid" id="posts-grid">
-        {% for post in site.posts %}
+        {% for post in paginator.posts %}
         <article class="post-card">
             <div class="post-meta">
                 <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
@@ -76,6 +76,16 @@ title: Home
             <a href="{{ post.url | relative_url }}" class="read-more">Read Article</a>
         </article>
         {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="btn btn-outline">← Newer</a>
+        {% endif %}
+        {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}" class="btn btn-outline">Older →</a>
+        {% endif %}
     </div>
 </section>
 
