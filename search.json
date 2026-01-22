@@ -6,12 +6,12 @@ layout: null
     {% assign words = post.content | number_of_words %}
     {% assign read_time = words | divided_by: 180 | plus: 1 %}
     {
-      "title"    : "{{ post.title | escape }}",
-      "url"      : "{{ post.url | relative_url }}",
-      "tags"     : "{{ post.tags | join: ', ' }}",
+      "title"    : {{ post.title | jsonify }},
+      "url"      : {{ post.url | relative_url | jsonify }},
+      "tags"     : {{ post.tags | join: ', ' | jsonify }},
       "date"     : "{{ post.date | date: "%B %d, %Y" }}",
-      "excerpt"  : "{{ post.excerpt | strip_html | strip_newlines | escape }}",
+      "excerpt"  : {{ post.excerpt | strip_html | strip_newlines | truncate: 160 | jsonify }},
       "read_time": "{{ read_time }} min"
-    } {% unless forloop.last %},{% endunless %}
+    }{% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]

@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const grid = document.getElementById('posts-grid');
     const filterTags = document.querySelectorAll('.filter-tag');
     let posts = [];
+    let currentCategory = 'all';
 
     // Fetch search index
     fetch('{{ "/search.json" | relative_url }}')
@@ -69,14 +70,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     searchInput.addEventListener('input', (e) => {
         const term = e.target.value.toLowerCase();
-        filterPosts(term, 'all');
+        filterPosts(term, currentCategory);
     });
 
     filterTags.forEach(tag => {
         tag.addEventListener('click', () => {
-            const category = tag.dataset.tag.toLowerCase();
-            searchInput.value = '';
-            filterPosts('', category);
+            filterTags.forEach(t => t.classList.remove('active'));
+            tag.classList.add('active');
+            currentCategory = tag.dataset.tag.toLowerCase();
+            filterPosts(searchInput.value.toLowerCase(), currentCategory);
         });
     });
 
@@ -84,7 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!posts.length) return;
 
         const filtered = posts.filter(post => {
-            const matchesSearch = post.title.toLowerCase().includes(term) || 
+            const matchesSearch = !term || 
+                                  post.title.toLowerCase().includes(term) || 
                                   post.tags.toLowerCase().includes(term) ||
                                   post.excerpt.toLowerCase().includes(term);
             const matchesCategory = category === 'all' || post.tags.toLowerCase().includes(category);
@@ -97,20 +100,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function renderPosts(results) {
         if (results.length === 0) {
-            grid.innerHTML = '<p class="no-results">No experiments found.</p>';
+            grid.innerHTML = '<div class="no-results"><p>No experiments found matching your criteria.</p><button class="btn btn-outline mt-lg" id="clear-search">Clear Search</button></div>';
+            document.getElementById('clear-search').addEventListener('click', () => {
+                searchInput.value = '';
+                filterTags[0].click(); // Reset to 'All'
+            });
             return;
         }
 
         grid.innerHTML = results.map(post => `
-            <article class="post-card">
+            <article class="post-card" style="animation: none; opacity: 1; transform: none;">
                 <div class="post-meta">
                     <span class="post-date">${post.date}</span>
                     <span class="read-time">⏱️ ${post.read_time}</span>
-                    ${post.tags ? `<span class="post-tag">${post.tags.split(', ')[0]}</span>` : ''}
+                    ${post.tags ? `<span class="post-tag">${post.tags.split(',')[0].trim()}</span>` : ''}
                 </div>
                 <h3><a href="${post.url}">${post.title}</a></h3>
                 <p class="post-excerpt">${post.excerpt}</p>
-                <a href="${post.url}" class="read-more">Read Article</a>
+                <a href="${post.url}" class="read-more">Read Article ➜</a>
             </article>
         `).join('');
     }
