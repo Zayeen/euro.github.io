@@ -2,15 +2,15 @@
    CSS Variables
    =================================== */
 :root {
-    /* Colors - Professional Blue/Cyan Theme */
-    --primary: #0ea5e9;
+    /* Colors - Dark Mode (Default) */
+    --primary: #38bdf8;
     --primary-dark: #0284c7;
-    --secondary: #06b6d4;
-    --accent: #10b981;
+    --secondary: #22d3ee;
+    --accent: #34d399;
     --bg-dark: #0f172a;
     --bg-card: #1e293b;
     --bg-hover: #334155;
-    --text-primary: #f1f5f9;
+    --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
     --text-muted: #64748b;
     --border: #334155;
@@ -28,9 +28,27 @@
     
     /* Effects */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
-    --transition: all 0.3s ease;
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --radius: 12px;
+}
+
+[data-theme="light"] {
+    --primary: #0284c7;
+    --primary-dark: #0369a1;
+    --secondary: #0891b2;
+    --accent: #059669;
+    --bg-dark: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-hover: #f1f5f9;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 /* ===================================
@@ -48,14 +66,16 @@ body {
     color: var(--text-primary);
     line-height: 1.7;
     font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    font-weight: 600;
-    line-height: 1.3;
+    font-weight: 700;
+    line-height: 1.2;
     margin-bottom: var(--spacing-sm);
     color: var(--text-primary);
+    letter-spacing: -0.02em;
 }
 
 h1 { font-size: 2.5rem; }
@@ -76,13 +96,15 @@ a:hover {
    Header & Navigation
    =================================== */
 .site-header {
-    background: rgba(15, 23, 42, 0.98);
+    background: var(--bg-dark); /* Fallback */
+    background: color-mix(in srgb, var(--bg-dark), transparent 5%);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
     z-index: 100;
     padding: 1rem 0;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-container {
@@ -96,7 +118,7 @@ a:hover {
 
 .logo {
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-primary);
     letter-spacing: -0.5px;
     font-family: var(--font-heading);
@@ -126,6 +148,31 @@ a:hover {
     background: var(--bg-hover);
 }
 
+/* Theme Toggle */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    color: var(--text-primary);
+    background: var(--bg-hover);
+    transform: rotate(15deg);
+}
+
+.theme-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
 /* ===================================
    Main Content
    =================================== */
@@ -139,37 +186,36 @@ a:hover {
 .hero {
     padding: var(--spacing-xl) var(--spacing-md);
     text-align: center;
-    background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(6, 182, 212, 0.08));
     border-bottom: 1px solid var(--border);
+    background: radial-gradient(circle at top right, var(--bg-hover), transparent 70%);
 }
 
 .hero-content {
     max-width: 750px;
     margin: 0 auto;
-}
-
-.hero-icon {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    opacity: 0.9;
+    animation: fadeIn 0.8s ease-out;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
-    font-weight: 700;
-    line-height: 1.2;
+    font-weight: 800;
+    line-height: 1.1;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero p {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     color: var(--text-secondary);
     margin-bottom: var(--spacing-md);
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
 .btn {
@@ -177,7 +223,7 @@ a:hover {
     padding: 0.875rem 2rem;
     background: var(--primary);
     color: white;
-    border-radius: 8px;
+    border-radius: 50px;
     font-weight: 600;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
@@ -211,13 +257,11 @@ a:hover {
     font-size: 2.25rem;
     margin-bottom: 0.75rem;
     color: var(--text-primary);
-    font-weight: 600;
 }
 
 .section-header p {
     color: var(--text-secondary);
-    font-size: 1.0625rem;
-    line-height: 1.6;
+    font-size: 1.1rem;
 }
 
 /* ===================================
@@ -226,7 +270,7 @@ a:hover {
 .posts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
     margin-bottom: var(--spacing-lg);
 }
 
@@ -236,19 +280,28 @@ a:hover {
 .post-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: var(--radius);
     padding: 1.5rem;
     transition: var(--transition);
     display: flex;
     flex-direction: column;
     height: 100%;
+    animation: fadeIn 0.6s ease-out backwards;
 }
 
 .post-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
     border-color: var(--primary);
 }
+
+/* Staggered Animation for cards */
+.post-card:nth-child(1) { animation-delay: 0.1s; }
+.post-card:nth-child(2) { animation-delay: 0.2s; }
+.post-card:nth-child(3) { animation-delay: 0.3s; }
+.post-card:nth-child(4) { animation-delay: 0.4s; }
+.post-card:nth-child(5) { animation-delay: 0.5s; }
+.post-card:nth-child(6) { animation-delay: 0.6s; }
 
 .post-meta {
     display: flex;
@@ -261,26 +314,25 @@ a:hover {
 .post-date {
     color: var(--text-muted);
     font-size: 0.875rem;
-    line-height: 1.4;
+    font-weight: 500;
 }
 
 .post-tag {
-    background: rgba(14, 165, 233, 0.15);
+    background: rgba(56, 189, 248, 0.1);
     color: var(--primary);
     padding: 0.25rem 0.75rem;
-    border-radius: 16px;
+    border-radius: 50px;
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    line-height: 1.4;
 }
 
 .post-card h3 {
     margin-bottom: 0.75rem;
     color: var(--text-primary);
-    font-size: 1.375rem;
-    line-height: 1.4;
+    font-size: 1.5rem;
+    line-height: 1.3;
 }
 
 .post-card h3 a {
@@ -293,10 +345,10 @@ a:hover {
 
 .post-excerpt {
     color: var(--text-secondary);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     flex-grow: 1;
-    line-height: 1.7;
-    font-size: 0.9375rem;
+    line-height: 1.6;
+    font-size: 1rem;
 }
 
 .read-more {
@@ -305,89 +357,94 @@ a:hover {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.9375rem;
+    font-size: 0.95rem;
 }
 
 .read-more:hover {
     gap: 0.75rem;
-}
-
-.read-more::after {
-    content: '→';
-    transition: var(--transition);
+    text-decoration: underline;
 }
 
 /* ===================================
    Post Content (Single Post)
    =================================== */
 .post-content {
-    max-width: 800px;
+    max-width: 760px;
     margin: 0 auto;
     padding: var(--spacing-lg) var(--spacing-md);
+    animation: fadeIn 0.8s ease-out;
 }
 
 .post-header {
     margin-bottom: var(--spacing-lg);
-    padding-bottom: var(--spacing-md);
-    border-bottom: 2px solid var(--border);
+    text-align: center;
 }
 
 .post-header h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: var(--spacing-sm);
-    line-height: 1.3;
-    color: var(--text-primary);
+    line-height: 1.2;
 }
 
 .post-body {
-    font-size: 1.0625rem;
+    font-size: 1.125rem;
     line-height: 1.8;
     color: var(--text-secondary);
 }
 
 .post-body h2 {
-    margin-top: var(--spacing-lg);
-    margin-bottom: var(--spacing-md);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
     color: var(--text-primary);
-    font-size: 1.875rem;
+    font-size: 2rem;
 }
 
 .post-body h3 {
-    margin-top: var(--spacing-md);
-    margin-bottom: var(--spacing-sm);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
     color: var(--text-primary);
-    font-size: 1.375rem;
+    font-size: 1.5rem;
 }
 
 .post-body p {
-    margin-bottom: var(--spacing-md);
-    line-height: 1.8;
+    margin-bottom: 1.5rem;
 }
 
 .post-body ul, .post-body ol {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 1.5rem;
     margin-left: 1.5rem;
 }
 
 .post-body li {
-    margin-bottom: 0.75rem;
-    line-height: 1.7;
+    margin-bottom: 0.5rem;
+}
+
+.post-body blockquote {
+    border-left: 4px solid var(--primary);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--text-primary);
+    background: var(--bg-hover);
+    padding: 1rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
 }
 
 .post-body code {
-    background: var(--bg-card);
-    padding: 0.25rem 0.5rem;
+    background: var(--bg-hover);
+    padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-size: 0.9em;
     color: var(--accent);
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .post-body pre {
     background: var(--bg-card);
-    padding: var(--spacing-md);
-    border-radius: 8px;
+    padding: 1.5rem;
+    border-radius: var(--radius);
     overflow-x: auto;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 1.5rem;
     border: 1px solid var(--border);
 }
 
@@ -398,76 +455,30 @@ a:hover {
 }
 
 /* ===================================
-   About Page
-   =================================== */
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: var(--spacing-lg) var(--spacing-md);
-}
-
-.about-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-md);
-    text-align: center;
-    color: var(--text-primary);
-}
-
-.about-content h2 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-}
-
-.about-content p {
-    font-size: 1.0625rem;
-    color: var(--text-secondary);
-    margin-bottom: var(--spacing-md);
-    line-height: 1.8;
-}
-
-.about-content ul {
-    margin-bottom: var(--spacing-md);
-    margin-left: 1.5rem;
-}
-
-.about-content li {
-    margin-bottom: 0.75rem;
-    line-height: 1.7;
-    color: var(--text-secondary);
-}
-
-/* ===================================
    Footer
    =================================== */
 .site-footer {
     background: var(--bg-card);
     border-top: 1px solid var(--border);
-    padding: 2.5rem var(--spacing-md);
+    padding: 3rem var(--spacing-md);
     margin-top: var(--spacing-xl);
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
     text-align: center;
 }
 
 .footer-content p {
     color: var(--text-muted);
-    margin-bottom: var(--spacing-sm);
-    line-height: 1.6;
+    margin-bottom: 1rem;
 }
 
 .footer-links {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-md);
+    gap: 1.5rem;
 }
 
 .footer-links a {
     color: var(--text-secondary);
-    transition: var(--transition);
+    font-weight: 500;
 }
 
 .footer-links a:hover {
@@ -475,7 +486,15 @@ a:hover {
 }
 
 /* ===================================
-   Responsive Design
+   Animations
+   =================================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================================
+   Responsive
    =================================== */
 @media (max-width: 768px) {
     :root {
@@ -484,61 +503,13 @@ a:hover {
     }
     
     h1 { font-size: 2rem; }
-    h2 { font-size: 1.75rem; }
-    h3 { font-size: 1.375rem; }
     
-    .hero h1 {
-        font-size: 2.25rem;
-    }
-    
-    .hero-icon {
-        font-size: 3rem;
-    }
+    .hero h1 { font-size: 2.5rem; }
     
     .nav-container {
         flex-direction: column;
-        gap: var(--spacing-sm);
-        padding: 0 var(--spacing-sm);
+        gap: 1rem;
     }
     
-    .nav-links {
-        gap: 0.5rem;
-    }
-    
-    .nav-links a {
-        padding: 0.5rem 0.75rem;
-        font-size: 0.875rem;
-    }
-    
-    .posts-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .post-header h1 {
-        font-size: 2rem;
-    }
-    
-    .post-content,
-    .about-content {
-        padding: var(--spacing-md) var(--spacing-sm);
-    }
-    
-    .section-header h2 {
-        font-size: 1.875rem;
-    }
-}
-
-/* ===================================
-   Utilities
-   =================================== */
-.text-center {
-    text-align: center;
-}
-
-.mt-lg {
-    margin-top: var(--spacing-lg);
-}
-
-.mb-lg {
-    margin-bottom: var(--spacing-lg);
+    .post-header h1 { font-size: 2.25rem; }
 }

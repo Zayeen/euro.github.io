@@ -13,11 +13,14 @@
     
     <header class="site-header">
         <nav class="nav-container">
-            <a href="{{ '/' | relative_url }}" class="logo">EURO IoT</a>
+            <a href="{{ '/' | relative_url }}" class="logo">{{ site.title }}</a>
             <div class="nav-links">
                 <a href="{{ '/' | relative_url }}">Home</a>
                 <a href="{{ '/#blog' | relative_url }}">Blog</a>
                 <a href="{{ '/about.html' | relative_url }}">About</a>
+                <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle">
+                    <span class="theme-icon">🌙</span>
+                </button>
             </div>
         </nav>
     </header>
@@ -28,7 +31,7 @@
 
     <footer class="site-footer">
         <div class="footer-content">
-            <p>&copy; 2026 {{ site.title }}. Secure. Smart. Connected.</p>
+            <p>&copy; 2026 {{ site.title }}. All rights reserved.</p>
             <div class="footer-links">
                 {% if site.github_username %}
                 <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>
@@ -37,5 +40,32 @@
         </div>
     </footer>
 
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+        
+        // Check for saved user preference, if any, on load of the website
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'light') {
+                themeIcon.textContent = '☀️';
+            }
+        }
+
+        themeToggle.addEventListener('click', function(e) {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.textContent = '🌙';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeIcon.textContent = '☀️';
+            }
+        });
+    </script>
 </body>
 </html>
