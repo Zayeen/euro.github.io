@@ -239,63 +239,6 @@ a:hover {
     color: white;
 }
 
-/* ===================================
-   Tech Stack Logos
-   =================================== */
-.tech-stack {
-    padding: 1.5rem 0;
-    background: var(--bg-hover); /* Alternate background */
-    background: linear-gradient(to bottom, var(--bg-dark), var(--bg-hover));
-    border-bottom: 1px solid var(--border);
-}
-
-.tech-grid {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.tech-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    color: var(--text-muted);
-    transition: var(--transition);
-    opacity: 0.7;
-    cursor: default;
-}
-
-.tech-item:hover {
-    color: var(--primary);
-    transform: translateY(-5px);
-    opacity: 1;
-}
-
-.tech-icon {
-    width: 32px;
-    height: 32px;
-}
-
-.tech-item span {
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-@media (max-width: 600px) {
-    .tech-grid {
-        gap: 1.5rem;
-    }
-    .tech-icon {
-        width: 28px;
-        height: 28px;
-    }
-}
 
 /* ===================================
    Blog Section
@@ -571,3 +514,10 @@ a:hover {
     
     .post-header h1 { font-size: 2.25rem; }
 }
+
+/* ===================================
+   Utilities
+   =================================== */
+.text-center { text-align: center; }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
