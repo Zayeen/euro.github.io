@@ -4,31 +4,48 @@ title: About
 permalink: /about.html
 ---
 
-<div class="about-content">
+<div class="about-header">
     <h1>About The IoT Lab</h1>
-    
-    <p>Welcome to The IoT Lab. This is a digital playground where we break things so you don't have to.</p>
-    
-    <p>The Internet of Things is messy. It's a fragmented world of different protocols, insecure devices, and brilliant possibilities. Here, we document the experiments, the failures, and the successes in building a truly smart, secure home.</p>
-    
-    <h2>What We Explore</h2>
-    
-    <ul>
-        <li><strong>Home Labs:</strong> Running Home Assistant, Node-RED, and custom Zigbee networks.</li>
-        <li><strong>Security:</strong> VLANs, firewalls, and keeping "smart" fridges away from banking data.</li>
-        <li><strong>Hardware:</strong> Teardowns, flashing custom firmware (ESPHome/Tasmota), and soldering iron accidents.</li>
-    </ul>
-    
-    <h2>The Philosophy</h2>
-    
-    <p>We believe technology should be:</p>
-    <ul>
-        <li><strong>Local First:</strong> Cloud-free whenever possible.</li>
-        <li><strong>Private:</strong> Your data stays in your house.</li>
-        <li><strong>Open Source:</strong> If you can't hack it, you don't own it.</li>
-    </ul>
-    
-    <div class="text-center mt-lg">
-        <a href="{{ '/' | relative_url }}" class="btn">Return to Lab</a>
+    <p>Breaking smart homes so you don't have to.</p>
+</div>
+
+<div class="about-grid">
+    <div class="about-card">
+        <h2>Mission</h2>
+        <p>The Internet of Things is messy. We document the experiments, failures, and successes in building a truly smart, secure home.</p>
     </div>
+
+    <div class="about-card">
+        <h2>Philosophy</h2>
+        <p>We believe technology should be:</p>
+        <ul>
+            <li><strong>Local First:</strong> Cloud-free whenever possible.</li>
+            <li><strong>Private:</strong> Your data stays in your house.</li>
+            <li><strong>Open Source:</strong> If you can't hack it, you don't own it.</li>
+        </ul>
+    </div>
+
+    <div class="about-card">
+        <h2>Lab Stats</h2>
+        <ul>
+            <li><strong>Sensors:</strong> 45+ Zigbee Nodes</li>
+            <li><strong>Network:</strong> 3 VLANs, Unifi Stack</li>
+            <li><strong>Server:</strong> Proxmox Cluster (3 Nodes)</li>
+            <li><strong>Uptime:</strong> 99.9% (mostly)</li>
+        </ul>
+    </div>
+
+    <div class="about-card">
+        <h2>Focus Areas</h2>
+        <ul>
+            <li>Home Assistant & Node-RED</li>
+            <li>Network Security & VLANs</li>
+            <li>Custom Hardware (ESP32)</li>
+            <li>Protocol Analysis (Matter, Thread)</li>
+        </ul>
+    </div>
+</div>
+
+<div class="text-center mb-lg">
+    <a href="{{ '/' | relative_url }}" class="btn">Return to Lab</a>
 </div>
