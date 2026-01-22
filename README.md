@@ -1,69 +1,143 @@
-<div align="center">
+# EURO IoT Intelligence
 
-## 🛡️ EURO IoT 
+A Jekyll-powered blog exploring IoT security, smart home technology, and the future of connected devices.
 
-<div align="center">
+## 🚀 Features
 
-```text
-  _______  __   __  _____    _______    ___   _______  _______ 
- |       ||  | |  ||      \ |       |  |   | |       ||       |
- |    ___||  | |  ||   _   ||   _   |  |   | |   _   ||_     _|
- |   |___ |  |_|  ||  |_|  ||  | |  |  |   | |  | |  |  |   |  
- |    ___||       ||    _  /|  |_|  |  |   | |  |_|  |  |   |  
- |   |___ |       ||   | | ||       |  |   | |       |  |   |  
- |_______||_______||___| |_||_______|  |___| |_______|  |___|  
+- **Jekyll Static Site Generator** - Fast, secure, and SEO-friendly
+- **Blog Posts with Tags** - Organized content with tag system
+- **Responsive Design** - Works perfectly on all devices
+- **Creative Modern Styling** - Gradient accents, smooth animations, and clean typography
+- **GitHub Pages Ready** - Automatic deployment on push
+
+## 📁 Project Structure
 
 ```
-<div align="center">
-            [ SYSTEM SECURITY STATUS: ACTIVE ]
-<div align="center">
-
-```text
-     _________________________________________________________________
-    |                                                                 |
-    |   EURO IoT INTELLIGENCE                         v.2.6.0 [STABLE]|
-    |_________________________________________________________________|
-    |                                                                 |
-    |   > INITIALIZING SECURITY PROTOCOLS...               [ OK ]     |
-    |   > CONNECTING TO NEURAL NETWORK...                  [ OK ]     |
-    |   > ENCRYPTING DATA STREAMS...                       [ OK ]     |
-    |                                                                 |
-    |   -----------------------------------------------------------   |
-    |   |  STATUS: ONLINE   |  PING: 14ms   |  ENCRYPTION: 256b   |   |
-    |   -----------------------------------------------------------   |
-    |_________________________________________________________________|
+euro.github.io/
+├── _config.yml              # Jekyll configuration
+├── _layouts/                # Page templates
+│   └── default.html        # Base layout
+├── _posts/                 # Blog posts (Markdown)
+│   ├── 2026-01-20-ai-cameras-next-gen-surveillance.md
+│   ├── 2026-01-19-matter-protocol-universal-translator.md
+│   ├── 2026-01-18-biometrics-vs-keys.md
+│   ├── 2026-01-17-data-encryption-living-room.md
+│   ├── 2026-01-16-smart-grids-home-batteries.md
+│   └── 2026-01-15-ambient-computing-invisible-tech.md
+├── assets/
+│   └── css/
+│       └── main.css        # Styles
+├── index.html              # Landing page
+├── about.html              # About page
+└── Gemfile                 # Ruby dependencies
 ```
 
-**SECURE SMART HOME INSIGHTS & ANALYSIS**
+## 🛠️ Local Development (Optional)
 
-</div>
+To test the site locally before pushing to GitHub:
+
+1. **Install Ruby and Jekyll** (if not already installed)
+   ```bash
+   # Install Ruby from https://rubyinstaller.org/ (Windows)
+   # Or use your system's package manager
+   ```
+
+2. **Install dependencies**
+   ```bash
+   bundle install
+   ```
+
+3. **Run local server**
+   ```bash
+   bundle exec jekyll serve
+   ```
+
+4. **View site**
+   Open browser to `http://localhost:4000/euro.github.io/`
+
+## 📝 Adding New Blog Posts
+
+1. Create a new file in `_posts/` folder with format: `YYYY-MM-DD-title-slug.md`
+
+2. Add front matter at the top:
+   ```yaml
+   ---
+   layout: default
+   title: "Your Post Title"
+   date: 2026-01-22
+   tags: [tag1, tag2, tag3]
+   excerpt: "Short description of your post"
+   ---
+   ```
+
+3. Write your content in HTML (inside `<div class="post-content">` wrapper)
+
+4. Commit and push - site will automatically update!
+
+## 🚀 Deployment
+
+The site automatically deploys via **GitHub Pages** when you push to the repository.
+
+1. **Commit your changes**
+   ```bash
+   git add .
+   git commit -m "Update site"
+   ```
+
+2. **Push to GitHub**
+   ```bash
+   git push origin main
+   ```
+
+3. **View your site**
+   Site will be live at: `https://zayeen.github.io/euro.github.io/`
+
+GitHub Pages will automatically build and deploy your Jekyll site.
+
+## 🎨 Customization
+
+### Colors
+Edit CSS variables in `assets/css/main.css`:
+```css
+:root {
+    --primary: #6366f1;
+    --secondary: #8b5cf6;
+    --accent: #ec4899;
+    /* ... more variables */
+}
+```
+
+### Site Info
+Edit `_config.yml`:
+```yaml
+title: Your Site Title
+description: Your site description
+author: Your Name
+email: your-email@example.com
+```
+
+### Navigation
+Edit links in `_layouts/default.html` header section.
+
+## 📦 Future Enhancements
+
+Easily add these features later:
+
+- **Search** (30 min) - Lunr.js client-side search
+- **Comments** (15 min) - utterances (GitHub Issues-based)
+- **Portfolio Section** (1 hour) - Showcase projects
+- **Tag Filtering** (30 min) - JavaScript tag filter
+- **Dark Mode Toggle** (20 min) - Theme switcher
+
+## � License
+
+© 2026 EURO IoT Intelligence. All rights reserved.
+
+## 🔗 Links
+
+- **Repository**: https://github.com/Zayeen/euro.github.io
+- **Live Site**: https://zayeen.github.io/euro.github.io/
 
 ---
 
-## 📡 MISSION PROTOCOL
-
-We are a **High-End Security Intelligence Blog** dedicated to exposing vulnerabilities in the Internet of Things (IoT) ecosystem and advocating for stronger encryption standards.
-
-> *"The S in IoT stands for Security."*
-
-## ⚡ CORE MODULES
-
-*   **🛡️ AI Surveillance:** Neural network analysis of modern camera systems.
-*   **🔐 Matter Protocol:** Unifying the fragmented smart home landscape.
-*   **🧬 Biometric Auth:** Moving beyond passwords to physical identity.
-*   **⛔ Vulnerability Reports:** Weekly exposes on insecure legacy devices.
-
-## 🛠️ TECH STACK
-
-This platform is built for speed and security:
-
-*   **HTML5:** Semantic architecture.
-*   **CSS3:** Glassmorphism UI with Neon accents (`style.css`).
-*   **Zero-JS:** No client-side scripts to track you.
-
-## 🚀 ACCESS PORTAL
-
-Simply open `index.html` to access the intelligence feed.
-
----
-*© 2026 EURO IoT Intelligence ENCRYPTED CONNECTION ESTABLISHED*
+Built with Jekyll • Hosted on GitHub Pages • Designed for security and intelligence

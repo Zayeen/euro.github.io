@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    {% seo %}
+    {% feed_meta %}
+</head>
+<body>
+    
+    <header class="site-header">
+        <nav class="nav-container">
+            <a href="{{ '/' | relative_url }}" class="logo">EURO IoT</a>
+            <div class="nav-links">
+                <a href="{{ '/' | relative_url }}">Home</a>
+                <a href="{{ '/#blog' | relative_url }}">Blog</a>
+                <a href="{{ '/about.html' | relative_url }}">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        {{ content }}
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 {{ site.title }}. Secure. Smart. Connected.</p>
+            <div class="footer-links">
+                {% if site.github_username %}
+                <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>
+                {% endif %}
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
