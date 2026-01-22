@@ -243,7 +243,7 @@ a:hover {
    Tech Stack Logos
    =================================== */
 .tech-stack {
-    padding: 3rem 0;
+    padding: 1.5rem 0;
     background: var(--bg-hover); /* Alternate background */
     background: linear-gradient(to bottom, var(--bg-dark), var(--bg-hover));
     border-bottom: 1px solid var(--border);
@@ -252,11 +252,11 @@ a:hover {
 .tech-grid {
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 2rem;
     flex-wrap: wrap;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
 }
 
 .tech-item {
@@ -277,23 +277,23 @@ a:hover {
 }
 
 .tech-icon {
-    width: 48px;
-    height: 48px;
+    width: 32px;
+    height: 32px;
 }
 
 .tech-item span {
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
 
 @media (max-width: 600px) {
     .tech-grid {
-        gap: 2rem;
+        gap: 1.5rem;
     }
     .tech-icon {
-        width: 36px;
-        height: 36px;
+        width: 28px;
+        height: 28px;
     }
 }
 
