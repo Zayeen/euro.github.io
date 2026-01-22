@@ -635,6 +635,49 @@ a:hover {
 }
 
 /* ===================================
+   About Page
+   =================================== */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) var(--spacing-md);
+    animation: fadeIn 0.8s ease-out;
+}
+
+.about-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.about-content h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-size: 1.75rem;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.8;
+}
+
+.about-content ul {
+    margin-bottom: var(--spacing-md);
+    margin-left: 1.5rem;
+    list-style-type: disc;
+}
+
+.about-content li {
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+/* ===================================
    Footer
    =================================== */
 .site-footer {
