@@ -58,34 +58,34 @@
     --transition-fast: all 0.15s ease;
 }
 
-/* Theme 2: Sakura Twilight */
-[data-color-theme="sakura"] {
-    --primary: #F43F5E;
-    --primary-dark: #E11D48;
-    --secondary: #C026D3;
-    --accent: #EC4899;
+/* Theme 2: Purple Dream */
+[data-color-theme="purple"] {
+    --primary: #9333EA;
+    --primary-dark: #7E22CE;
+    --secondary: #A855F7;
+    --accent: #C084FC;
+    --cta: #D946EF;
+    --shadow-colored: 0 8px 16px rgba(147, 51, 234, 0.2);
+}
+
+/* Theme 3: Monochrome */
+[data-color-theme="mono"] {
+    --primary: #71717A;
+    --primary-dark: #52525B;
+    --secondary: #3F3F46;
+    --accent: #3B82F6;
+    --cta: #71717A;
+    --shadow-colored: 0 8px 16px rgba(113, 113, 122, 0.2);
+}
+
+/* Theme 4: Warm Sunset */
+[data-color-theme="sunset"] {
+    --primary: #F59E0B;
+    --primary-dark: #D97706;
+    --secondary: #FB923C;
+    --accent: #FBBF24;
     --cta: #F59E0B;
-    --shadow-colored: 0 8px 16px rgba(244, 63, 94, 0.2);
-}
-
-/* Theme 3: Matrix Green */
-[data-color-theme="matrix"] {
-    --primary: #22C55E;
-    --primary-dark: #16A34A;
-    --secondary: #14B8A6;
-    --accent: #84CC16;
-    --cta: #10B981;
-    --shadow-colored: 0 8px 16px rgba(34, 197, 94, 0.2);
-}
-
-/* Theme 4: Sunset Blaze */
-[data-color-theme="blaze"] {
-    --primary: #F97316;
-    --primary-dark: #EA580C;
-    --secondary: #EF4444;
-    --accent: #EAB308;
-    --cta: #DC2626;
-    --shadow-colored: 0 8px 16px rgba(249, 115, 22, 0.2);
+    --shadow-colored: 0 8px 16px rgba(245, 158, 11, 0.2);
 }
 
 /* Light Mode */
@@ -113,28 +113,28 @@
     --cta: #EA580C;
 }
 
-[data-theme="light"][data-color-theme="sakura"] {
-    --primary: #E11D48;
-    --primary-dark: #BE123C;
-    --secondary: #A21CAF;
-    --accent: #DB2777;
+[data-theme="light"][data-color-theme="purple"] {
+    --primary: #7E22CE;
+    --primary-dark: #6B21A8;
+    --secondary: #9333EA;
+    --accent: #A855F7;
+    --cta: #C026D3;
+}
+
+[data-theme="light"][data-color-theme="mono"] {
+    --primary: #52525B;
+    --primary-dark: #3F3F46;
+    --secondary: #27272A;
+    --accent: #2563EB;
+    --cta: #52525B;
+}
+
+[data-theme="light"][data-color-theme="sunset"] {
+    --primary: #D97706;
+    --primary-dark: #B45309;
+    --secondary: #EA580C;
+    --accent: #F59E0B;
     --cta: #D97706;
-}
-
-[data-theme="light"][data-color-theme="matrix"] {
-    --primary: #16A34A;
-    --primary-dark: #15803D;
-    --secondary: #0D9488;
-    --accent: #65A30D;
-    --cta: #059669;
-}
-
-[data-theme="light"][data-color-theme="blaze"] {
-    --primary: #EA580C;
-    --primary-dark: #C2410C;
-    --secondary: #DC2626;
-    --accent: #CA8A04;
-    --cta: #B91C1C;
 }
 
 /* ===================================
@@ -298,16 +298,16 @@ a:hover {
     background: linear-gradient(135deg, #0EA5E9 0%, #8B5CF6 100%);
 }
 
-.color-theme-btn[data-theme="sakura"] {
-    background: linear-gradient(135deg, #F43F5E 0%, #C026D3 100%);
+.color-theme-btn[data-theme="purple"] {
+    background: linear-gradient(135deg, #9333EA 0%, #C084FC 100%);
 }
 
-.color-theme-btn[data-theme="matrix"] {
-    background: linear-gradient(135deg, #22C55E 0%, #14B8A6 100%);
+.color-theme-btn[data-theme="mono"] {
+    background: linear-gradient(135deg, #71717A 0%, #3B82F6 100%);
 }
 
-.color-theme-btn[data-theme="blaze"] {
-    background: linear-gradient(135deg, #F97316 0%, #EF4444 100%);
+.color-theme-btn[data-theme="sunset"] {
+    background: linear-gradient(135deg, #F59E0B 0%, #FB923C 100%);
 }
 
 /* ===================================
