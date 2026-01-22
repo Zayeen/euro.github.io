@@ -333,6 +333,25 @@ a:hover {
     animation: pulse 2s infinite;
 }
 
+.status-bar {
+    width: 100%;
+    height: 4px;
+    background: var(--bg-hover);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.bar-fill {
+    height: 100%;
+    background: var(--primary);
+    transition: width 0.8s ease-in-out;
+}
+
+.bar-fill.accent {
+    background: var(--accent);
+}
+
 @keyframes pulse {
     0% { opacity: 1; }
     50% { opacity: 0.4; }

@@ -16,22 +16,24 @@ title: Home
 
 <section class="lab-status">
     <div class="status-grid">
-        <div class="status-card">
+        <div class="status-card" id="card-system">
             <span class="status-label">Lab System</span>
             <span class="status-value">Online</span>
             <span class="status-indicator online"></span>
         </div>
-        <div class="status-card">
+        <div class="status-card" id="card-experiments">
+            <span class="status-label">Total Experiments</span>
+            <span class="status-value">{{ site.posts | size }}</span>
+        </div>
+        <div class="status-card" id="card-network">
             <span class="status-label">Network Load</span>
-            <span class="status-value">Stable</span>
+            <span class="status-value"><span id="network-val">12</span>%</span>
+            <div class="status-bar"><div class="bar-fill" style="width: 12%"></div></div>
         </div>
-        <div class="status-card">
-            <span class="status-label">Active Node</span>
-            <span class="status-value">Primary</span>
-        </div>
-        <div class="status-card">
-            <span class="status-label">Last Signal</span>
-            <span class="status-value">{{ site.posts[0].date | date: "%H:%M UTC" }}</span>
+        <div class="status-card" id="card-cpu">
+            <span class="status-label">CPU Usage</span>
+            <span class="status-value"><span id="cpu-val">4</span>%</span>
+            <div class="status-bar"><div class="bar-fill accent" style="width: 4%"></div></div>
         </div>
     </div>
 </section>
@@ -68,3 +70,28 @@ title: Home
         <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline">View All Posts</a>
     </div>
 </section>
+
+<script>
+    function updateStats() {
+        const netVal = document.getElementById('network-val');
+        const cpuVal = document.getElementById('cpu-val');
+        
+        if (netVal && cpuVal) {
+            // Randomize Network Load (between 8 and 24)
+            const newNet = Math.floor(Math.random() * (24 - 8 + 1)) + 8;
+            netVal.innerText = newNet;
+            netVal.closest('.status-card').querySelector('.bar-fill').style.width = newNet + '%';
+            
+            // Randomize CPU Load (between 2 and 12)
+            const newCpu = Math.floor(Math.random() * (12 - 2 + 1)) + 2;
+            cpuVal.innerText = newCpu;
+            cpuVal.closest('.status-card').querySelector('.bar-fill.accent').style.width = newCpu + '%';
+        }
+    }
+
+    // Update every 3 seconds
+    setInterval(updateStats, 3000);
+    
+    // Initial call
+    updateStats();
+</script>
