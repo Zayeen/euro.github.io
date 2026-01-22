@@ -46,7 +46,7 @@ title: Home
     
     <div class="posts-grid">
         {% for post in site.posts limit:3 %}
-        <article class="post-card" style="animation-delay: {{ forloop.index | times: 0.1 }}s">
+        <article class="post-card">
             <div class="post-meta">
                 <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
                 {% if post.tags.size > 0 %}
