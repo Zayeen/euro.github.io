@@ -643,6 +643,7 @@ a:hover {
     padding: var(--spacing-xl) var(--spacing-md);
     max-width: 800px;
     margin: 0 auto;
+    width: 100%;
     animation: fadeIn 0.8s ease-out;
 }
 
@@ -659,66 +660,91 @@ a:hover {
 .about-header p {
     font-size: 1.25rem;
     color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .about-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-md) var(--spacing-xl);
+    justify-content: center;
     animation: fadeIn 1s ease-out;
 }
 
 .about-card {
     background: var(--bg-card);
+    background: linear-gradient(145deg, var(--bg-card), var(--bg-hover));
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 2rem;
-    transition: var(--transition);
+    padding: 2.5rem;
+    transition: all 0.3s ease;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    opacity: 0.8;
 }
 
 .about-card:hover {
-    border-color: var(--primary);
-    transform: translateY(-5px);
+    transform: translateY(-7px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
 }
 
 .about-card h2 {
     color: var(--primary);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
 }
 
 .about-card p {
     color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
 }
 
 .about-card ul {
     list-style: none;
     padding: 0;
+    margin-top: auto; /* Push list to bottom if needed, or just let it flow */
 }
 
 .about-card li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     color: var(--text-secondary);
     position: relative;
-    padding-left: 1.5rem;
+    padding-left: 1.75rem;
 }
 
 .about-card li::before {
-    content: "→";
+    content: "➜";
     position: absolute;
     left: 0;
-    color: var(--primary);
+    color: var(--accent); /* Use accent color for bullets */
+    font-weight: bold;
 }
 
 .about-card strong {
     color: var(--text-primary);
+    font-weight: 600;
 }
 
 /* ===================================
