@@ -4,7 +4,7 @@ description: Personal blog exploring IoT security, smart home technology, and th
 author: EURO IoT
 email: your-email@example.com
 url: https://zayeen.github.io
-baseurl: /euro.github.io
+baseurl: /homepage
 
 # Build Settings
 markdown: kramdown
@@ -44,7 +44,7 @@ exclude:
 
 # Site social
 github_username: Zayeen
-repository: Zayeen/euro.github.io
+repository: Zayeen/homepage
 
 # Pagination (future use)
 paginate: 6
