@@ -25,7 +25,7 @@ excerpt: "Modern security cameras don't just record; they understand. How neural
         <ul>
             <li><strong>Object Classification:</strong> Distinguishing between humans, pets, vehicles, and inanimate objects with 99% accuracy.</li>
             <li><strong>Behavior Analysis:</strong> Identifying loitering patterns or unusual entry vectors before a breach occurs.</li>
-            <li><strong>Package Detection:</strong> recognizing delivery uniforms and parcels to combat porch piracy.</li>
+            <li><strong>Package Detection:</strong> Recognizing delivery uniforms and parcels to combat porch piracy.</li>
         </ul>
 
         <h2>The Edge Computing Advantage</h2>

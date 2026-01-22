@@ -49,7 +49,7 @@ This project dives deep into the technologies, protocols, and philosophies that 
 
 ## 🚀 Explore the Intelligence
 
-**Live Site:** [https://zayeen.github.io/IOT/](https://zayeen.github.io/IOT/)
+**Live Site:** [https://zayeen.github.io/euro.github.io/](https://zayeen.github.io/euro.github.io/)
 
 **Repository:** [https://github.com/Zayeen/euro.github.io](https://github.com/Zayeen/euro.github.io)
 
