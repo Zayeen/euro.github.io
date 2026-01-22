@@ -1,7 +1,7 @@
-# Zayeen's IoT Log
+# The IoT Lab
 > **IoT • Security • Experiments**
 
-Welcome to my digital garden. This is where I document my journey into the messy, fascinating world of the Internet of Things, smart home security, and the code that connects it all.
+Welcome to the lab. This is where we document experiments into the messy, fascinating world of the Internet of Things, smart home security, and the code that connects it all.
 
 ---
 
@@ -30,4 +30,4 @@ Check out the blog live at:
 
 ---
 
-© 2026 Zayeen • Built with Jekyll • Hosted on GitHub Pages
+© 2026 The IoT Lab • Built with Jekyll • Hosted on GitHub Pages
