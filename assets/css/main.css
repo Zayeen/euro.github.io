@@ -1,56 +1,140 @@
 /* ===================================
-   CSS Variables
+   CSS Variables - Multi-Theme System
    =================================== */
 :root {
-    /* Colors - Elegant Dark Mode */
-    --primary: #3b82f6;
-    --primary-dark: #2563eb;
-    --secondary: #6366f1;
-    --accent: #10b981;
-    --bg-dark: #111111;
+    /* Default Theme: Cyber Ocean */
+    --primary: #0EA5E9;
+    --primary-dark: #0284C7;
+    --secondary: #8B5CF6;
+    --accent: #06B6D4;
+    --cta: #F97316;
+    --bg-dark: #0A0A0A;
     --bg-card: #1a1a1a;
-    --bg-hover: #222222;
-    --text-primary: #e5e5e5;
+    --bg-hover: #252525;
+    --text-primary: #f5f5f5;
     --text-secondary: #a3a3a3;
     --text-muted: #737373;
-    --border: #333333;
+    --border: #2a2a2a;
     
-    /* Spacing */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 2rem;
-    --spacing-lg: 4rem;
-    --spacing-xl: 6rem;
+    /* Spacing System - Enhanced */
+    --spacing-xs: 0.25rem;    /* 4px */
+    --spacing-sm: 0.5rem;     /* 8px */
+    --spacing-md: 1rem;       /* 16px */
+    --spacing-lg: 1.5rem;     /* 24px */
+    --spacing-xl: 2rem;       /* 32px */
+    --spacing-2xl: 3rem;      /* 48px */
+    --spacing-3xl: 4rem;      /* 64px */
+    --spacing-4xl: 6rem;      /* 96px */
     
-    /* Typography */
+    /* Typography - Refined Scale */
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    --font-size-xs: 0.75rem;   /* 12px */
+    --font-size-sm: 0.875rem;  /* 14px */
+    --font-size-base: 1rem;    /* 16px */
+    --font-size-lg: 1.125rem;  /* 18px */
+    --font-size-xl: 1.25rem;   /* 20px */
+    --font-size-2xl: 1.5rem;   /* 24px */
+    --font-size-3xl: 2rem;     /* 32px */
+    --font-size-4xl: 2.5rem;   /* 40px */
     
-    /* Effects - Boxy & Solid */
-    --shadow-sm: none;
-    --shadow-md: none;
-    --shadow-lg: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-    --shadow-glow: none;
-    --transition: all 0.2s ease;
-    --radius: 4px;
+    /* Border Radius - Modern & Smooth */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 24px;
+    --radius-full: 9999px;
+    
+    /* Shadows - Layered Depth */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.04);
+    --shadow-colored: 0 8px 16px rgba(14, 165, 233, 0.2);
+    
+    /* Transitions */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease;
 }
 
+/* Theme 2: Sakura Twilight */
+[data-color-theme="sakura"] {
+    --primary: #F43F5E;
+    --primary-dark: #E11D48;
+    --secondary: #C026D3;
+    --accent: #EC4899;
+    --cta: #F59E0B;
+    --shadow-colored: 0 8px 16px rgba(244, 63, 94, 0.2);
+}
+
+/* Theme 3: Matrix Green */
+[data-color-theme="matrix"] {
+    --primary: #22C55E;
+    --primary-dark: #16A34A;
+    --secondary: #14B8A6;
+    --accent: #84CC16;
+    --cta: #10B981;
+    --shadow-colored: 0 8px 16px rgba(34, 197, 94, 0.2);
+}
+
+/* Theme 4: Sunset Blaze */
+[data-color-theme="blaze"] {
+    --primary: #F97316;
+    --primary-dark: #EA580C;
+    --secondary: #EF4444;
+    --accent: #EAB308;
+    --cta: #DC2626;
+    --shadow-colored: 0 8px 16px rgba(249, 115, 22, 0.2);
+}
+
+/* Light Mode */
 [data-theme="light"] {
-    /* Elegant Light Mode (Paper Grey) */
-    --primary: #2563eb;
-    --primary-dark: #1d4ed8;
-    --secondary: #4f46e5;
-    --accent: #059669;
-    --bg-dark: #f3f4f6;
+    --bg-dark: #f8f9fa;
     --bg-card: #ffffff;
-    --bg-hover: #e5e7eb;
-    --text-primary: #171717;
+    --bg-hover: #f1f3f5;
+    --text-primary: #1a1a1a;
     --text-secondary: #525252;
     --text-muted: #737373;
-    --border: #d4d4d4;
-    --shadow-sm: none;
-    --shadow-md: 0 1px 3px rgba(0,0,0,0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+    --border: #e5e7eb;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Light Mode Theme Adjustments */
+[data-theme="light"][data-color-theme="ocean"],
+[data-theme="light"] {
+    --primary: #0284C7;
+    --primary-dark: #0369A1;
+    --secondary: #7C3AED;
+    --accent: #0891B2;
+    --cta: #EA580C;
+}
+
+[data-theme="light"][data-color-theme="sakura"] {
+    --primary: #E11D48;
+    --primary-dark: #BE123C;
+    --secondary: #A21CAF;
+    --accent: #DB2777;
+    --cta: #D97706;
+}
+
+[data-theme="light"][data-color-theme="matrix"] {
+    --primary: #16A34A;
+    --primary-dark: #15803D;
+    --secondary: #0D9488;
+    --accent: #65A30D;
+    --cta: #059669;
+}
+
+[data-theme="light"][data-color-theme="blaze"] {
+    --primary: #EA580C;
+    --primary-dark: #C2410C;
+    --secondary: #DC2626;
+    --accent: #CA8A04;
+    --cta: #B91C1C;
 }
 
 /* ===================================
@@ -175,6 +259,57 @@ a:hover {
     line-height: 1;
 }
 
+/* Color Theme Selector */
+.color-theme-selector {
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.25rem;
+    background: var(--bg-card);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border);
+}
+
+.color-theme-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    position: relative;
+    padding: 0;
+    background: none;
+}
+
+.color-theme-btn:hover {
+    transform: scale(1.15);
+    border-color: var(--text-secondary);
+}
+
+.color-theme-btn.active {
+    transform: scale(1.1);
+    border-color: var(--text-primary);
+    box-shadow: 0 0 0 2px var(--bg-dark);
+}
+
+.color-theme-btn[data-theme="ocean"] {
+    background: linear-gradient(135deg, #0EA5E9 0%, #8B5CF6 100%);
+}
+
+.color-theme-btn[data-theme="sakura"] {
+    background: linear-gradient(135deg, #F43F5E 0%, #C026D3 100%);
+}
+
+.color-theme-btn[data-theme="matrix"] {
+    background: linear-gradient(135deg, #22C55E 0%, #14B8A6 100%);
+}
+
+.color-theme-btn[data-theme="blaze"] {
+    background: linear-gradient(135deg, #F97316 0%, #EF4444 100%);
+}
+
 /* ===================================
    Main Content
    =================================== */
@@ -289,18 +424,21 @@ a:hover {
 .status-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
+    border-left: 3px solid var(--primary);
     padding: 1.5rem;
-    border-radius: var(--radius);
+    border-radius: var(--radius-lg);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     position: relative;
     transition: var(--transition);
+    box-shadow: var(--shadow-sm);
 }
 
 .status-card:hover {
     border-color: var(--primary);
-    transform: translateY(-2px);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--shadow-lg);
 }
 
 .status-label {
@@ -405,19 +543,38 @@ a:hover {
 .post-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border-radius: var(--radius-lg);
     padding: 1.5rem;
     transition: var(--transition);
     display: flex;
     flex-direction: column;
     height: 100%;
     animation: fadeIn 0.6s ease-out backwards;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.post-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    opacity: 0;
+    transition: var(--transition);
 }
 
 .post-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-4px);
     border-color: var(--primary);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-colored);
+}
+
+.post-card:hover::before {
+    opacity: 1;
 }
 
 /* Staggered Animation for cards */

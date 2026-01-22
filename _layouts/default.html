@@ -39,6 +39,12 @@
                 <a href="{{ '/' | relative_url }}">Home</a>
                 <a href="{{ '/blog/' | relative_url }}">Blog</a>
                 <a href="{{ '/about.html' | relative_url }}">About</a>
+                <div class="color-theme-selector" aria-label="Color theme selector">
+                    <button class="color-theme-btn active" data-theme="ocean" aria-label="Ocean theme" title="Cyber Ocean"></button>
+                    <button class="color-theme-btn" data-theme="sakura" aria-label="Sakura theme" title="Sakura Twilight"></button>
+                    <button class="color-theme-btn" data-theme="matrix" aria-label="Matrix theme" title="Matrix Green"></button>
+                    <button class="color-theme-btn" data-theme="blaze" aria-label="Blaze theme" title="Sunset Blaze"></button>
+                </div>
                 <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle">
                     <span class="theme-icon">🌙</span>
                 </button>
@@ -71,6 +77,7 @@
             if (progress) progress.style.width = scrolled + "%";
         });
 
+        // Light/Dark Theme Toggle
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = themeToggle.querySelector('.theme-icon');
         
@@ -99,6 +106,37 @@
             if (!localStorage.getItem('theme')) {
                 setTheme(e.matches ? 'dark' : 'light');
             }
+        });
+
+        // Color Theme Switcher
+        const colorThemeButtons = document.querySelectorAll('.color-theme-btn');
+        
+        const getPreferredColorTheme = () => {
+            return localStorage.getItem('colorTheme') || 'ocean';
+        };
+
+        const setColorTheme = (colorTheme) => {
+            document.documentElement.setAttribute('data-color-theme', colorTheme);
+            localStorage.setItem('colorTheme', colorTheme);
+            
+            // Update active button
+            colorThemeButtons.forEach(btn => {
+                if (btn.dataset.theme === colorTheme) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        };
+
+        // Initialize color theme
+        setColorTheme(getPreferredColorTheme());
+
+        // Add click handlers to color theme buttons
+        colorThemeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                setColorTheme(btn.dataset.theme);
+            });
         });
     </script>
 </body>
