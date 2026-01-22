@@ -6,37 +6,72 @@ title: Home
 <section class="hero">
     <div class="hero-content">
         <h1>The IoT Lab</h1>
-        <p>Experiments in smart home security, automation, and the connected future. We break things so you don't have to.</p>
-        <a href="{{ '/blog/' | relative_url }}" class="btn">Explore Experiments</a>
+        <p>Exploring the frontier of smart home security, automation, and the connected future. We break things so you don't have to.</p>
+        <div class="hero-actions">
+            <a href="{{ '/blog/' | relative_url }}" class="btn">Explore Experiments</a>
+            <a href="{{ '/about.html' | relative_url }}" class="btn btn-outline-hero">Learn More</a>
+        </div>
     </div>
 </section>
 
 <section class="tech-stack">
     <div class="tech-grid">
         <div class="tech-item" title="Matter">
-            <!-- Matter Logo (Simplified) -->
-            <svg viewBox="0 0 24 24" fill="currentColor" class="tech-icon"><path d="M12 2L2 19h20L12 2zm0 3.5L18.5 17H5.5L12 5.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tech-icon"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
             <span>Matter</span>
         </div>
         <div class="tech-item" title="Zigbee">
-            <!-- Zigbee (Z shape) -->
-            <svg viewBox="0 0 24 24" fill="currentColor" class="tech-icon"><path d="M4 4h16v3h-9.5l9.5 13H4v-3h9.5L4 4z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tech-icon"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             <span>Zigbee</span>
         </div>
-        <div class="tech-item" title="Wi-Fi">
-            <!-- Wi-Fi -->
-            <svg viewBox="0 0 24 24" fill="currentColor" class="tech-icon"><path d="M12 3C7.79 3 3.7 4.41.38 7l1.79 2.15C4.54 7.38 7.57 6.1 11 6.1c3.43 0 6.46 1.28 8.83 3.05L21.62 7C18.3 4.41 14.21 3 12 3zm0 6c-2.48 0-4.8.84-6.66 2.25L12 21l6.66-9.75C16.8 9.84 14.48 9 12 9z"/></svg>
-            <span>Wi-Fi</span>
+        <div class="tech-item" title="Wi-Fi 6">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tech-icon"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+            <span>Wi-Fi 6</span>
         </div>
         <div class="tech-item" title="Home Assistant">
-            <!-- Home Assistant (Simple House) -->
-            <svg viewBox="0 0 24 24" fill="currentColor" class="tech-icon"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tech-icon"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             <span>Home Assistant</span>
         </div>
-        <div class="tech-item" title="Bluetooth">
-            <!-- Bluetooth -->
-            <svg viewBox="0 0 24 24" fill="currentColor" class="tech-icon"><path d="M17.71 7.71L12 2h-1v7.59L6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 11 14.41V22h1l5.71-5.71-4.3-4.29 4.3-4.29zM13 5.83l1.88 1.88L13 9.59V5.83zm1.88 10.46L13 18.17v-3.76l1.88 1.88z"/></svg>
-            <span>Bluetooth</span>
+        <div class="tech-item" title="MQTT">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tech-icon"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span>MQTT</span>
         </div>
+        <div class="tech-item" title="ESP32">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tech-icon"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="15" x2="23" y2="15"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="15" x2="4" y2="15"/></svg>
+            <span>ESP32</span>
+        </div>
+    </div>
+</section>
+
+<section class="blog-section">
+    <div class="section-header">
+        <h2>Recent Experiments</h2>
+        <p>Latest write-ups from the lab bench.</p>
+    </div>
+    
+    <div class="posts-grid">
+        {% for post in site.posts limit:3 %}
+        <article class="post-card">
+            <div class="post-meta">
+                <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                {% if post.tags.size > 0 %}
+                <span class="post-tag">{{ post.tags[0] }}</span>
+                {% endif %}
+            </div>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p class="post-excerpt">
+                {% if post.excerpt %}
+                    {{ post.excerpt | strip_html | truncatewords: 20 }}
+                {% else %}
+                    {{ post.content | strip_html | truncatewords: 20 }}
+                {% endif %}
+            </p>
+            <a href="{{ post.url | relative_url }}" class="read-more">Read Experiment ➜</a>
+        </article>
+        {% endfor %}
+    </div>
+
+    <div class="text-center">
+        <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline">View All Posts</a>
     </div>
 </section>
