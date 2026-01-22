@@ -45,13 +45,26 @@ title: Home
     <div class="section-header">
         <h2>Latest Posts</h2>
         <p>Thoughts, tutorials, and experiments.</p>
+        
+        <div class="search-wrapper">
+            <input type="text" id="search-input" placeholder="🔍 Search experiments..." aria-label="Search">
+            <div class="tags-row">
+                <span class="filter-tag" data-tag="all">All</span>
+                <span class="filter-tag" data-tag="Security">#Security</span>
+                <span class="filter-tag" data-tag="Automation">#Automation</span>
+                <span class="filter-tag" data-tag="Hardware">#Hardware</span>
+            </div>
+        </div>
     </div>
     
-    <div class="posts-grid">
+    <div class="posts-grid" id="posts-grid">
         {% for post in site.posts %}
         <article class="post-card">
             <div class="post-meta">
                 <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                {% assign words = post.content | number_of_words %}
+                {% assign read_time = words | divided_by: 180 | plus: 1 %}
+                <span class="read-time">⏱️ {{ read_time }} min</span>
                 {% if post.tags %}
                     {% for tag in post.tags limit:1 %}
                     <span class="post-tag">{{ tag }}</span>
@@ -65,3 +78,68 @@ title: Home
         {% endfor %}
     </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('search-input');
+    const grid = document.getElementById('posts-grid');
+    const filterTags = document.querySelectorAll('.filter-tag');
+    let posts = [];
+
+    // Fetch search index
+    fetch('{{ "/search.json" | relative_url }}')
+        .then(response => response.json())
+        .then(data => {
+            posts = data;
+        });
+
+    searchInput.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+        filterPosts(term, 'all');
+    });
+
+    filterTags.forEach(tag => {
+        tag.addEventListener('click', () => {
+            // Visual selection state would go here
+            const category = tag.dataset.tag.toLowerCase();
+            searchInput.value = ''; // Clear search when clicking tag
+            filterPosts('', category);
+        });
+    });
+
+    function filterPosts(term, category) {
+        if (!posts.length) return;
+
+        const filtered = posts.filter(post => {
+            const matchesSearch = post.title.toLowerCase().includes(term) || 
+                                  post.tags.toLowerCase().includes(term) ||
+                                  post.excerpt.toLowerCase().includes(term);
+            const matchesCategory = category === 'all' || post.tags.toLowerCase().includes(category);
+            
+            return matchesSearch && matchesCategory;
+        });
+
+        renderPosts(filtered);
+    }
+
+    function renderPosts(results) {
+        if (results.length === 0) {
+            grid.innerHTML = '<p class="no-results">No experiments found.</p>';
+            return;
+        }
+
+        grid.innerHTML = results.map(post => `
+            <article class="post-card">
+                <div class="post-meta">
+                    <span class="post-date">${post.date}</span>
+                    <span class="read-time">⏱️ ${post.read_time}</span>
+                    ${post.tags ? `<span class="post-tag">${post.tags.split(', ')[0]}</span>` : ''}
+                </div>
+                <h3><a href="${post.url}">${post.title}</a></h3>
+                <p class="post-excerpt">${post.excerpt}</p>
+                <a href="${post.url}" class="read-more">Read Article</a>
+            </article>
+        `).join('');
+    }
+});
+</script>
