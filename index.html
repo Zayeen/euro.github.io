@@ -14,31 +14,24 @@ title: Home
     </div>
 </section>
 
-<section class="tech-stack">
-    <div class="tech-grid">
-        <div class="tech-item" title="Matter">
-            <img src="{{ '/assets/icons/matter.svg' | relative_url }}" alt="Matter Logo" class="tech-icon">
-            <span>Matter</span>
+<section class="lab-status">
+    <div class="status-grid">
+        <div class="status-card">
+            <span class="status-label">Environment</span>
+            <span class="status-value">Active</span>
+            <span class="status-indicator online"></span>
         </div>
-        <div class="tech-item" title="Zigbee">
-            <img src="{{ '/assets/icons/zigbee.svg' | relative_url }}" alt="Zigbee Logo" class="tech-icon">
-            <span>Zigbee</span>
+        <div class="status-card">
+            <span class="status-label">Devices Connected</span>
+            <span class="status-value">42</span>
         </div>
-        <div class="tech-item" title="Wi-Fi 6">
-            <img src="{{ '/assets/icons/wifi6.svg' | relative_url }}" alt="Wi-Fi 6 Logo" class="tech-icon">
-            <span>Wi-Fi 6</span>
+        <div class="status-card">
+            <span class="status-label">Protocols Tested</span>
+            <span class="status-value">Matter, Zigbee, MQTT</span>
         </div>
-        <div class="tech-item" title="Home Assistant">
-            <img src="{{ '/assets/icons/homeassistant.svg' | relative_url }}" alt="Home Assistant Logo" class="tech-icon">
-            <span>Home Assistant</span>
-        </div>
-        <div class="tech-item" title="MQTT">
-            <img src="{{ '/assets/icons/mqtt.svg' | relative_url }}" alt="MQTT Logo" class="tech-icon">
-            <span>MQTT</span>
-        </div>
-        <div class="tech-item" title="ESP32">
-            <img src="{{ '/assets/icons/espressif.svg' | relative_url }}" alt="Espressif Logo" class="tech-icon">
-            <span>ESP32</span>
+        <div class="status-card">
+            <span class="status-label">Latest Experiment</span>
+            <span class="status-value">{{ site.posts[0].title | truncate: 25 }}</span>
         </div>
     </div>
 </section>
