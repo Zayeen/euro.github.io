@@ -423,6 +423,87 @@ a:hover {
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 2rem;
     margin-bottom: var(--spacing-lg);
+    transition: var(--transition);
+}
+
+.posts-grid.list-view {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.posts-grid.list-view .post-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 1.5rem;
+    min-height: auto;
+}
+
+.posts-grid.list-view .post-card::before {
+    display: none;
+}
+
+.posts-grid.list-view .post-card .post-meta {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    width: 150px;
+}
+
+.posts-grid.list-view .post-card h3 {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    flex-grow: 1;
+}
+
+.posts-grid.list-view .post-card .post-excerpt,
+.posts-grid.list-view .post-card .read-more {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .posts-grid.list-view .post-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .posts-grid.list-view .post-card .post-meta {
+        width: auto;
+    }
+}
+
+/* View Toggle */
+.view-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.toggle-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.toggle-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--primary-light);
+}
+
+.toggle-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
 }
 
 /* ===================================

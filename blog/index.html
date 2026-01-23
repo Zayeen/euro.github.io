@@ -8,10 +8,19 @@ pagination:
 <section class="blog-section">
     <div class="section-header">
         <h1>All Articles</h1>
-        <p>Thoughts, tutorials, and articles in smart home security and automation.</p>
         
         <div class="search-wrapper">
             <input type="text" id="search-input" placeholder="🔍 Search articles..." aria-label="Search">
+            
+            <div class="view-toggle">
+                <button id="grid-view-btn" class="toggle-btn active" title="Grid View">
+                    <span>Grid View</span>
+                </button>
+                <button id="list-view-btn" class="toggle-btn" title="List View">
+                    <span>List View</span>
+                </button>
+            </div>
+
             <div class="tags-row">
                 <span class="filter-tag" data-tag="all">All</span>
                 <span class="filter-tag" data-tag="Security">#Security</span>
@@ -58,8 +67,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('search-input');
     const grid = document.getElementById('posts-grid');
     const filterTags = document.querySelectorAll('.filter-tag');
+    const gridBtn = document.getElementById('grid-view-btn');
+    const listBtn = document.getElementById('list-view-btn');
     let posts = [];
     let currentCategory = 'all';
+
+    // View Switching Logic
+    function setView(view) {
+        if (view === 'list') {
+            grid.classList.add('list-view');
+            listBtn.classList.add('active');
+            gridBtn.classList.remove('active');
+        } else {
+            grid.classList.remove('list-view');
+            gridBtn.classList.add('active');
+            listBtn.classList.remove('active');
+        }
+        localStorage.setItem('blog-view', view);
+    }
+
+    gridBtn.addEventListener('click', () => setView('grid'));
+    listBtn.addEventListener('click', () => setView('list'));
+
+    // Initialize View from LocalStorage
+    const savedView = localStorage.getItem('blog-view') || 'grid';
+    setView(savedView);
 
     // Fetch search index
     fetch('{{ "/search.json" | relative_url }}')
