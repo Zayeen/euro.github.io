@@ -1,7 +1,13 @@
-# The IoT Lab
-> **IoT • Security • Experiments**
+██╗  ██╗ ██████╗ ███╗   ███╗███████╗██████╗  █████╗  ██████╗ ███████╗
+██║  ██║██╔═══██╗████╗ ████║██╔════╝██╔══██╗██╔══██╗██╔════╝ ██╔════╝
+███████║██║   ██║██╔████╔██║█████╗  ██████╔╝███████║██║  ███╗█████╗  
+██╔══██║██║   ██║██║╚██╔╝██║██╔══╝  ██╔═══╝ ██╔══██║██║   ██║██╔══╝  
+██║  ██║╚██████╔╝██║ ╚═╝ ██║███████╗██║     ██║  ██║╚██████╔╝███████╗
+╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+```
+> **Security • Automation • Experiments**
 
-Welcome to the lab. This is where we document experiments into the messy, fascinating world of the Internet of Things, smart home security, and the code that connects it all.
+Welcome to the lab. This is where we document experiments into the messy, fascinating world of connected devices, smart home security, and the code that connects it all.
 
 ---
 
@@ -25,9 +31,11 @@ Check out the blog live at:
 ## 🛠️ Built With
 
 *   **Jekyll:** Static site generator.
-*   **GitHub Pages:** Hosting.
-*   **Custom Theme:** Features dark/light mode, clean typography, and CSS animations.
+*   **GitHub Pages:** Hosting platform.
+*   **GitHub Actions:** Automated deployment pipeline.
+*   **Flat Design:** Minimal gray-blue palette with clean, consistent typography.
+*   **Dark/Light Mode:** Seamless theme switching.
 
 ---
 
-© 2026 The IoT Lab • Built with Jekyll • Hosted on GitHub Pages
+© 2026 homepage • Built with Jekyll • Deployed via GitHub Actions
