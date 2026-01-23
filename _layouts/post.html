@@ -23,7 +23,7 @@ layout: default
 
     <div class="post-footer">
         <div class="share-buttons">
-            <span>Share this experiment:</span>
+            <span>Share this article:</span>
             <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url }}" target="_blank" rel="noopener noreferrer" class="share-btn">Twitter</a>
             <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{ page.title | url_encode }}" target="_blank" rel="noopener noreferrer" class="share-btn">LinkedIn</a>
         </div>
@@ -43,7 +43,7 @@ layout: default
 
     {% if related_posts_count > 0 %}
     <div class="related-posts">
-        <h3>Related Experiments</h3>
+        <h3>Related Articles</h3>
         <div class="related-grid">
             {% assign shown_count = 0 %}
             {% for post in site.posts %}
@@ -62,7 +62,7 @@ layout: default
                                 <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
                             </div>
                             <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-                            <a href="{{ post.url | relative_url }}" class="read-more">Read Experiment ➜</a>
+                            <a href="{{ post.url | relative_url }}" class="read-more">Read Article ➜</a>
                         </article>
                         {% assign shown_count = shown_count | plus: 1 %}
                     {% endif %}

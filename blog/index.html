@@ -7,11 +7,11 @@ pagination:
 
 <section class="blog-section">
     <div class="section-header">
-        <h1>All Experiments</h1>
-        <p>Thoughts, tutorials, and experiments in smart home security and automation.</p>
+        <h1>All Articles</h1>
+        <p>Thoughts, tutorials, and articles in smart home security and automation.</p>
         
         <div class="search-wrapper">
-            <input type="text" id="search-input" placeholder="🔍 Search experiments..." aria-label="Search">
+            <input type="text" id="search-input" placeholder="🔍 Search articles..." aria-label="Search">
             <div class="tags-row">
                 <span class="filter-tag" data-tag="all">All</span>
                 <span class="filter-tag" data-tag="Security">#Security</span>
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function renderPosts(results) {
         if (results.length === 0) {
-            grid.innerHTML = '<div class="no-results"><p>No experiments found matching your criteria.</p><button class="btn btn-outline mt-lg" id="clear-search">Clear Search</button></div>';
+        grid.innerHTML = '<div class="no-results"><p>No articles found matching your criteria.</p><button class="btn btn-outline mt-lg" id="clear-search">Clear Search</button></div>';
             document.getElementById('clear-search').addEventListener('click', () => {
                 searchInput.value = '';
                 filterTags[0].click(); // Reset to 'All'
