@@ -8,7 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     
     <!-- Open Graph / Social Media -->
@@ -39,12 +39,6 @@
                 <a href="{{ '/' | relative_url }}">Home</a>
                 <a href="{{ '/blog/' | relative_url }}">Blog</a>
                 <a href="{{ '/about.html' | relative_url }}">About</a>
-                <div class="color-theme-selector" aria-label="Color theme selector">
-                    <button class="color-theme-btn active" data-theme="ocean" aria-label="Ocean theme" title="Cyber Ocean"></button>
-                    <button class="color-theme-btn" data-theme="purple" aria-label="Purple theme" title="Purple Dream"></button>
-                    <button class="color-theme-btn" data-theme="mono" aria-label="Monochrome theme" title="Monochrome"></button>
-                    <button class="color-theme-btn" data-theme="sunset" aria-label="Sunset theme" title="Warm Sunset"></button>
-                </div>
                 <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle">
                     <span class="theme-icon">🌙</span>
                 </button>
@@ -106,37 +100,6 @@
             if (!localStorage.getItem('theme')) {
                 setTheme(e.matches ? 'dark' : 'light');
             }
-        });
-
-        // Color Theme Switcher
-        const colorThemeButtons = document.querySelectorAll('.color-theme-btn');
-        
-        const getPreferredColorTheme = () => {
-            return localStorage.getItem('colorTheme') || 'ocean';
-        };
-
-        const setColorTheme = (colorTheme) => {
-            document.documentElement.setAttribute('data-color-theme', colorTheme);
-            localStorage.setItem('colorTheme', colorTheme);
-            
-            // Update active button
-            colorThemeButtons.forEach(btn => {
-                if (btn.dataset.theme === colorTheme) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-        };
-
-        // Initialize color theme
-        setColorTheme(getPreferredColorTheme());
-
-        // Add click handlers to color theme buttons
-        colorThemeButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                setColorTheme(btn.dataset.theme);
-            });
         });
     </script>
 </body>
