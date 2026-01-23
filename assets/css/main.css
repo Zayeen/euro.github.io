@@ -2,13 +2,13 @@
    CSS Variables - Enhanced Ocean Theme
    =================================== */
 :root {
-    /* Enhanced Blue/Gray Theme */
-    --primary: #0EA5E9;
-    --primary-dark: #0284C7;
-    --primary-light: #38BDF8;
-    --secondary: #8B5CF6;
-    --accent: #06B6D4;
-    --accent-bright: #22D3EE;
+    /* Refined Blue/Gray Theme - Elegant & Muted */
+    --primary: #60A5FA;
+    --primary-dark: #3B82F6;
+    --primary-light: #93C5FD;
+    --secondary: #A78BFA;
+    --accent: #6B7280;
+    --accent-bright: #9CA3AF;
     --cta: #F97316;
     --bg-dark: #0A0A0A;
     --bg-card: #1a1a1a;
@@ -244,28 +244,17 @@ a:hover {
 }
 
 .hero h1 {
-    font-family: 'Outfit', 'Space Grotesk', sans-serif;
-    font-size: clamp(3rem, 10vw, 6rem);
+    font-family: 'Inter', var(--font-heading), sans-serif;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
     margin-bottom: 1.5rem;
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: -0.05em;
-    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 30%, var(--accent-bright) 70%, var(--secondary) 100%);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 0 80px rgba(14, 165, 233, 0.3);
-    filter: drop-shadow(0 4px 20px rgba(14, 165, 233, 0.4)) drop-shadow(0 0 40px rgba(139, 92, 246, 0.2));
-    animation: titleGlow 3s ease-in-out infinite alternate;
-}
-
-@keyframes titleGlow {
-    from {
-        filter: drop-shadow(0 4px 20px rgba(14, 165, 233, 0.4)) drop-shadow(0 0 40px rgba(139, 92, 246, 0.2));
-    }
-    to {
-        filter: drop-shadow(0 4px 30px rgba(14, 165, 233, 0.6)) drop-shadow(0 0 60px rgba(139, 92, 246, 0.3));
-    }
+    filter: drop-shadow(0 2px 8px rgba(96, 165, 250, 0.15));
 }
 
 .hero p {
