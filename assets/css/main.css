@@ -2,14 +2,14 @@
    CSS Variables - Enhanced Ocean Theme
    =================================== */
 :root {
-    /* Refined Blue/Gray Theme - Elegant & Muted */
-    --primary: #60A5FA;
-    --primary-dark: #3B82F6;
-    --primary-light: #93C5FD;
-    --secondary: #A78BFA;
+    /* Flat Gray-Blue Theme - Minimal & Clean */
+    --primary: #6B7280;
+    --primary-dark: #4B5563;
+    --primary-light: #9CA3AF;
+    --secondary: #6B7280;
     --accent: #6B7280;
     --accent-bright: #9CA3AF;
-    --cta: #F97316;
+    --cta: #6B7280;
     --bg-dark: #0A0A0A;
     --bg-card: #1a1a1a;
     --bg-hover: #252525;
@@ -250,11 +250,7 @@ a:hover {
     font-weight: 700;
     line-height: 1.15;
     letter-spacing: -0.02em;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 2px 8px rgba(96, 165, 250, 0.15));
+    color: var(--text-primary);
 }
 
 .hero p {
@@ -655,13 +651,10 @@ a:hover {
 .about-header h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
     line-height: 1;
     letter-spacing: -0.04em;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .about-header p {
