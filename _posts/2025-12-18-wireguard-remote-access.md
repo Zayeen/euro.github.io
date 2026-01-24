@@ -2,8 +2,7 @@
 layout: post
 title: "Secure Remote Access with WireGuard"
 date: 2025-12-18
-categories: [IoT]
-tags: [Security, Network]
+tags: [Security, Networking]
 ---
 
 ## Secure Remote Access with WireGuard

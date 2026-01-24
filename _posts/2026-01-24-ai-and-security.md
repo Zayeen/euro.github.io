@@ -2,8 +2,7 @@
 layout: post
 title: "AI and Security: The New Frontier of Digital Defense"
 date: 2026-01-24 10:00:00 +0100
-categories: [Security, AI]
-tags: [Cybersecurity, Artificial Intelligence, Automation]
+tags: [Security, AI, Automation]
 ---
 
 ### The Shield of Intelligence 🛡️

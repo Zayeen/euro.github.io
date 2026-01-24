@@ -2,7 +2,6 @@
 layout: post
 title: "Home Assistant vs Hubitat: A Comparison"
 date: 2025-12-07
-categories: [IoT]
 tags: [Automation, Hubs]
 ---
 

@@ -2,8 +2,7 @@
 layout: post
 title: "Biometrics vs. Keys: The Debate is Over"
 date: 2026-01-18 10:00:00 +0100
-categories: [Security, Access Control]
-tags: [Access-Control, Biometrics, Security, Authentication]
+tags: [Security, Biometrics, Authentication]
 ---
 
 ### The End of the Brass Era 🔑

@@ -2,7 +2,6 @@
 layout: post
 title: "The Privacy Risks of Cloud Cameras"
 date: 2026-01-07
-categories: [IoT]
 tags: [Security, Privacy]
 ---
 

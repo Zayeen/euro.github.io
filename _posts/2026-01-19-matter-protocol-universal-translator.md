@@ -2,8 +2,7 @@
 layout: post
 title: "Matter Protocol: The Universal Translator"
 date: 2026-01-19 10:00:00 +0100
-categories: [Smart Home, Interoperability]
-tags: [Ecosystem, Interoperability, Matter, Smart-Home]
+tags: [Matter, Smart Home]
 ---
 
 ### The End of Walled Gardens 🏗️

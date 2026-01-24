@@ -2,7 +2,6 @@
 layout: post
 title: "Flashing Tasmota on Generic Smart Plugs"
 date: 2025-12-21
-categories: [IoT]
 tags: [Hardware, Tasmota]
 ---
 

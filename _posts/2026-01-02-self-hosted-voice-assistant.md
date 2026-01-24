@@ -2,7 +2,6 @@
 layout: post
 title: "Self-Hosting a Voice Assistant"
 date: 2026-01-02
-categories: [IoT]
 tags: [Privacy, AI]
 ---
 

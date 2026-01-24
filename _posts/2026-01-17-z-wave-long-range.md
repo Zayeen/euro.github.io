@@ -2,7 +2,6 @@
 layout: post
 title: "Z-Wave Long Range Explained"
 date: 2026-01-17
-categories: [IoT]
 tags: [Z-Wave, Hardware]
 ---
 

@@ -2,8 +2,7 @@
 layout: post
 title: "The State of Matter Protocol in 2026"
 date: 2026-01-05
-categories: [IoT]
-tags: [Standards, Matter]
+tags: [Matter]
 ---
 
 ## The State of Matter Protocol in 2026

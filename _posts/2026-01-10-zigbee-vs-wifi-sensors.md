@@ -2,7 +2,6 @@
 layout: post
 title: "Why Zigbee Beats Wi-Fi for Sensors"
 date: 2026-01-10
-categories: [IoT]
 tags: [Hardware, Automation]
 ---
 

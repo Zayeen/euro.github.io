@@ -2,7 +2,6 @@
 layout: post
 title: "Real-time Energy Monitoring Guide"
 date: 2026-01-07
-categories: [IoT]
 tags: [Energy, Hardware]
 ---
 

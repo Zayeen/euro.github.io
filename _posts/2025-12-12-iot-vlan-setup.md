@@ -2,8 +2,7 @@
 layout: post
 title: "Setting Up a Dedicated IoT VLAN"
 date: 2025-12-12
-categories: [IoT]
-tags: [Security, Network]
+tags: [Security, Networking]
 ---
 
 ## Setting Up a Dedicated IoT VLAN

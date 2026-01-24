@@ -2,8 +2,7 @@
 layout: post
 title: "Ambient Computing: Invisible Tech"
 date: 2026-01-15 10:00:00 +0100
-categories: [Future Tech, Automation]
-tags: [Future-Tech, Ambient-Computing, Automation, UX]
+tags: [Future Tech, Automation, UX]
 ---
 
 ### The Best Tech is Invisible 🌫️

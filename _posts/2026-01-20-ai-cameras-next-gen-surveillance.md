@@ -2,8 +2,7 @@
 layout: post
 title: "The Eye That Never Sleeps: Next-Gen AI Cameras"
 date: 2026-01-20 10:00:00 +0100
-categories: [Security, AI]
-tags: [Surveillance, AI, Security, Smart Home]
+tags: [Security, AI, Smart Home]
 ---
 
 ### The Era of Passive Recording is Over 👁️

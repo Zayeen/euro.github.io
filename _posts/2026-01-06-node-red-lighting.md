@@ -2,7 +2,6 @@
 layout: post
 title: "Automating Lighting Logic with Node-RED"
 date: 2026-01-06
-categories: [IoT]
 tags: [Automation, Node-RED]
 ---
 

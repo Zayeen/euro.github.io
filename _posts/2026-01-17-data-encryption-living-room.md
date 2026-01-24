@@ -2,8 +2,7 @@
 layout: post
 title: "Data Encryption in Your Living Room"
 date: 2026-01-17 10:00:00 +0100
-categories: [Privacy, Security]
-tags: [Privacy, Encryption, Data-Security, Smart-Home]
+tags: [Privacy, Security, Smart Home]
 ---
 
 ### Your Home as a Data Center 🏠

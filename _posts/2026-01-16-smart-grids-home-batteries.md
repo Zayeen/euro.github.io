@@ -2,8 +2,7 @@
 layout: post
 title: "Smart Grids and Home Batteries"
 date: 2026-01-16 10:00:00 +0100
-categories: [Infrastructure, Energy]
-tags: [Infrastructure, Energy, Smart-Grid, Sustainability]
+tags: [Infrastructure, Energy, Sustainability]
 ---
 
 ### IoT for Survival 🔋

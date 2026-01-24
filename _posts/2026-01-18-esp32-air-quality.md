@@ -2,7 +2,6 @@
 layout: post
 title: "Building an ESP32 Air Quality Monitor"
 date: 2026-01-18
-categories: [IoT]
 tags: [Hardware, ESP32]
 ---
 

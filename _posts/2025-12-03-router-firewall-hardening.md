@@ -2,8 +2,7 @@
 layout: post
 title: "Hardening Your Router Firewall Rules"
 date: 2025-12-03
-categories: [IoT]
-tags: [Security, Network]
+tags: [Security, Networking]
 ---
 
 ## Hardening Your Router Firewall Rules

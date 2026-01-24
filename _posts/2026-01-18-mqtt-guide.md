@@ -2,8 +2,7 @@
 layout: post
 title: "Understanding MQTT for Beginners"
 date: 2026-01-18
-categories: [IoT]
-tags: [Protocols, Automation]
+tags: [Networking, Automation]
 ---
 
 ## Understanding MQTT for Beginners
