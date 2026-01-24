@@ -399,6 +399,7 @@ a:hover {
     grid-template-columns: 1fr 300px;
     gap: 3rem;
     align-items: start;
+    position: relative;
 }
 
 @media (max-width: 1024px) {
@@ -413,10 +414,12 @@ a:hover {
 
 .blog-sidebar {
     position: sticky;
-    top: 100px;
+    top: 120px;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+    height: fit-content;
+    align-self: start;
 }
 
 .sidebar-widget {
