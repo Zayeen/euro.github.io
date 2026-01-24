@@ -413,13 +413,10 @@ a:hover {
 }
 
 .blog-sidebar {
-    position: sticky;
-    top: 120px;
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    height: fit-content;
-    align-self: start;
 }
 
 .sidebar-widget {
