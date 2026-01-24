@@ -239,12 +239,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function filterPosts(term, category) {
+        const normalizedCategory = category ? category.toLowerCase() : 'all';
         filteredPosts = allPosts.filter(post => {
             const matchesSearch = !term || 
                                   post.title.toLowerCase().includes(term) || 
                                   post.tags.toLowerCase().includes(term) ||
                                   post.excerpt.toLowerCase().includes(term);
-            const matchesCategory = category === 'all' || post.tags.toLowerCase().includes(category);
+            const postTags = post.tags ? post.tags.toLowerCase() : '';
+            const matchesCategory = normalizedCategory === 'all' || postTags.includes(normalizedCategory);
             
             return matchesSearch && matchesCategory;
         });
