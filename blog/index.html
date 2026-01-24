@@ -20,10 +20,19 @@ pagination:
             </div>
 
             <div class="tags-row">
-                <span class="filter-tag" data-tag="all">All</span>
-                <span class="filter-tag" data-tag="Security">#Security</span>
-                <span class="filter-tag" data-tag="Automation">#Automation</span>
-                <span class="filter-tag" data-tag="Hardware">#Hardware</span>
+                <span class="filter-tag active" data-tag="all">All</span>
+                {% assign all_tags = "" | split: "," %}
+                {% for post in site.posts %}
+                  {% for tag in post.tags %}
+                    {% unless all_tags contains tag %}
+                      {% assign all_tags = all_tags | push: tag %}
+                    {% endunless %}
+                  {% endfor %}
+                {% endfor %}
+                {% assign sorted_tags = all_tags | sort %}
+                {% for tag in sorted_tags %}
+                <span class="filter-tag" data-tag="{{ tag }}">#{{ tag }}</span>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -101,8 +110,27 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             allPosts = data;
-            filteredPosts = [...allPosts];
-            loadMorePosts(); // Initial load
+            
+            // Check for tag in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlTag = urlParams.get('tag');
+            
+            if (urlTag) {
+                currentCategory = urlTag.toLowerCase();
+                // Set active class on corresponding tag button
+                filterTags.forEach(t => {
+                    if (t.dataset.tag.toLowerCase() === currentCategory) {
+                        t.classList.add('active');
+                    } else {
+                        t.classList.remove('active');
+                    }
+                });
+                filterPosts(searchInput.value.toLowerCase(), currentCategory);
+            } else {
+                filteredPosts = [...allPosts];
+                loadMorePosts(); // Initial load
+            }
+            
             setupIntersectionObserver();
         });
 
@@ -163,6 +191,16 @@ document.addEventListener('DOMContentLoaded', function() {
             filterTags.forEach(t => t.classList.remove('active'));
             tag.classList.add('active');
             currentCategory = tag.dataset.tag.toLowerCase();
+            
+            // Update URL without reloading
+            const url = new URL(window.location);
+            if (currentCategory === 'all') {
+                url.searchParams.delete('tag');
+            } else {
+                url.searchParams.set('tag', tag.dataset.tag);
+            }
+            window.history.pushState({}, '', url);
+
             filterPosts(searchInput.value.toLowerCase(), currentCategory);
         });
     });
