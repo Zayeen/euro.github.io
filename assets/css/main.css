@@ -43,7 +43,30 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
+
+/* Global Entrance Animations */
+.animate-in {
+    animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
 
 /* Grid Background */
 body::before {
@@ -194,10 +217,28 @@ a {
     color: var(--text-muted);
 }
 
+.status-icon-box {
+    transition: var(--transition);
+    cursor: help;
+}
+
+.status-icon-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--text-secondary);
+    color: var(--text-primary);
+}
+
 .status-icon-box.active {
     color: var(--accent-teal);
     border-color: var(--accent-teal);
     box-shadow: 0 0 15px var(--accent-teal-glow);
+    animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+    0% { box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(20, 184, 166, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(20, 184, 166, 0); }
 }
 
 .hero h1 {
