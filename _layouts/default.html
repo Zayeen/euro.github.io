@@ -61,5 +61,48 @@
             Built with curiosity. Powered by caffeine.
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const statusIconsContainers = document.querySelectorAll('.status-icons');
+            
+            const colors = [
+                { hex: '#14b8a6', glow: 'rgba(20, 184, 166, 0.5)' }, // Teal
+                { hex: '#f59e0b', glow: 'rgba(245, 158, 11, 0.5)' }, // Amber
+                { hex: '#ef4444', glow: 'rgba(239, 68, 68, 0.5)' },  // Red
+                { hex: '#8b5cf6', glow: 'rgba(139, 92, 246, 0.5)' }, // Violet
+                { hex: '#3b82f6', glow: 'rgba(59, 130, 246, 0.5)' }  // Blue
+            ];
+            
+            let colorIndex = 0;
+            
+            statusIconsContainers.forEach(container => {
+                const icons = container.querySelectorAll('.status-icon-box');
+                if (icons.length === 0) return;
+                
+                let activeIndex = Array.from(icons).findIndex(icon => icon.classList.contains('active'));
+                if (activeIndex === -1) activeIndex = 0;
+                
+                setInterval(() => {
+                    // Remove active class and dynamic styles from current icon
+                    icons[activeIndex].classList.remove('active');
+                    icons[activeIndex].style.removeProperty('--dynamic-color');
+                    icons[activeIndex].style.removeProperty('--dynamic-glow');
+                    
+                    // Move to next icon
+                    activeIndex = (activeIndex + 1) % icons.length;
+                    
+                    // Move to next color
+                    colorIndex = (colorIndex + 1) % colors.length;
+                    const nextColor = colors[colorIndex];
+                    
+                    // Add active class and set new dynamic colors
+                    icons[activeIndex].classList.add('active');
+                    icons[activeIndex].style.setProperty('--dynamic-color', nextColor.hex);
+                    icons[activeIndex].style.setProperty('--dynamic-glow', nextColor.glow);
+                }, 1000);
+            });
+        });
+    </script>
 </body>
 </html>

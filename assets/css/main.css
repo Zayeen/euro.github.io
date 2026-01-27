@@ -229,14 +229,14 @@ a {
 }
 
 .status-icon-box.active {
-    color: var(--accent-teal);
-    border-color: var(--accent-teal);
-    box-shadow: 0 0 15px var(--accent-teal-glow);
-    animation: pulse-border 2s infinite;
+    color: var(--dynamic-color, var(--accent-teal));
+    border-color: var(--dynamic-color, var(--accent-teal));
+    box-shadow: 0 0 15px var(--dynamic-glow, var(--accent-teal-glow));
+    animation: pulse-border 1s infinite;
 }
 
 @keyframes pulse-border {
-    0% { box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.4); }
+    0% { box-shadow: 0 0 0 0 var(--dynamic-glow, rgba(20, 184, 166, 0.4)); }
     70% { box-shadow: 0 0 0 10px rgba(20, 184, 166, 0); }
     100% { box-shadow: 0 0 0 0 rgba(20, 184, 166, 0); }
 }
