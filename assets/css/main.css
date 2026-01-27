@@ -491,10 +491,13 @@ a {
 
 .tags-chips-container {
     display: flex;
+    flex-wrap: nowrap;
     gap: 0.75rem;
     overflow-x: auto;
     padding: 0.5rem 0;
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
 }
 
 .tags-chips-container::-webkit-scrollbar {

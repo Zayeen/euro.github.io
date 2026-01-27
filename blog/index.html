@@ -104,6 +104,17 @@ document.addEventListener('DOMContentLoaded', function() {
     listBtn.addEventListener('click', () => setView('list'));
     setView(localStorage.getItem('blog-view') || 'grid');
 
+    // Enable horizontal scroll with mouse wheel for tags
+    const tagsContainer = document.getElementById('tags-list');
+    if (tagsContainer) {
+        tagsContainer.addEventListener('wheel', (e) => {
+            if (e.deltaY !== 0) {
+                e.preventDefault();
+                tagsContainer.scrollLeft += e.deltaY;
+            }
+        });
+    }
+
     fetch('{{ "/search.json" | relative_url }}')
         .then(response => response.json())
         .then(data => {
