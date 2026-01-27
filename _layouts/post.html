@@ -105,14 +105,17 @@ layout: default
         if (headings.length > 3) {
             const toc = document.createElement('div');
             toc.className = 'table-of-contents';
-            toc.innerHTML = '<h4>Jump to Section</h4><ul></ul>';
+            toc.innerHTML = '<h4><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg> Jump to Section</h4><ul></ul>';
             const ul = toc.querySelector('ul');
             
             headings.forEach((heading, index) => {
                 const id = 'heading-' + index;
                 heading.setAttribute('id', id);
                 const li = document.createElement('li');
-                li.style.paddingLeft = heading.tagName === 'H3' ? '1.5rem' : '0';
+                if (heading.tagName === 'H3') {
+                    li.style.marginLeft = '1.5rem';
+                    li.style.fontSize = '0.9em';
+                }
                 const a = document.createElement('a');
                 a.href = '#' + id;
                 a.textContent = heading.textContent;
