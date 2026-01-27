@@ -84,22 +84,24 @@
                 if (activeIndex === -1) activeIndex = 0;
                 
                 setInterval(() => {
-                    // Remove active class and dynamic styles from current icon
-                    icons[activeIndex].classList.remove('active');
-                    icons[activeIndex].style.removeProperty('--dynamic-color');
-                    icons[activeIndex].style.removeProperty('--dynamic-glow');
-                    
                     // Move to next icon
+                    const oldIndex = activeIndex;
                     activeIndex = (activeIndex + 1) % icons.length;
                     
                     // Move to next color
                     colorIndex = (colorIndex + 1) % colors.length;
                     const nextColor = colors[colorIndex];
                     
-                    // Add active class and set new dynamic colors
+                    // Update current active icon
                     icons[activeIndex].classList.add('active');
                     icons[activeIndex].style.setProperty('--dynamic-color', nextColor.hex);
                     icons[activeIndex].style.setProperty('--dynamic-glow', nextColor.glow);
+
+                    // Remove active class from old icon AFTER adding to new one
+                    // to ensure there's always an active one during transition
+                    icons[oldIndex].classList.remove('active');
+                    icons[oldIndex].style.removeProperty('--dynamic-color');
+                    icons[oldIndex].style.removeProperty('--dynamic-glow');
                 }, 1000);
             });
         });
